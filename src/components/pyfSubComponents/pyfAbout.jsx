@@ -11,7 +11,7 @@ const PyfAbout = () => {
       title: "About PYF",
       content: (
         <div className="p-6 sm:p-8 text-center">
-          <h3 className="text-2xl sm:text-3xl font-bold text-green-800 mb-4">
+          <h3 className="text-2xl sm:text-4xl font-bold text-green-800 mb-4">
             Pakistan Youth Festival
           </h3>
           <p className="text-gray-800 leading-relaxed text-sm sm:text-base max-w-3xl mx-auto">
@@ -39,7 +39,7 @@ const PyfAbout = () => {
       title: "About Organizers",
       content: (
         <div className="p-6 sm:p-8 text-center">
-          <h3 className="text-2xl sm:text-3xl font-bold text-green-800 mb-4">
+          <h3 className="text-2xl sm:text-4xl font-bold text-green-800 mb-4">
             Arts Council Karachi
           </h3>
           <p className="text-gray-800 leading-relaxed text-sm sm:text-base max-w-3xl mx-auto">
@@ -76,7 +76,7 @@ const PyfAbout = () => {
   };
 
   return (
-    <section className="w-full py-12 sm:py-16 bg-gradient-to-b from-red-50 to-white overflow-hidden relative">
+    <section className="w-full py-6 sm:py-8 bg-gradient-to-b from-red-50 to-white overflow-hidden relative">
       {/* Section Header */}
       <motion.div
         className="text-center mb-10 sm:mb-12"
@@ -85,10 +85,10 @@ const PyfAbout = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-green-800 text-center mt-12 mb-8">
+        <h2 className="text-2xl sm:text-4xl md:text-4xl lg:text-4xl font-bold text-green-800 text-center mt-12 mb-8">
           Our Journey Unfolded
         </h2>
-        <p className="mt-2 text-base sm:text-2xl text-gray-600 max-w-2xl mx-auto">
+        <p className="mt-2 text-base sm:text-xl text-black max-w-3xl mx-auto">
           Explore the heart of PYF and its vision through a modern take on youth empowerment.
         </p>
       </motion.div>

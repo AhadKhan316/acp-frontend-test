@@ -1,15 +1,35 @@
-// src/components/PYFNewsletter.jsx
 import { motion } from "framer-motion";
 
 const PyfNewsletter = () => {
+  // Framer Motion Variants for animations
+  const textVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  const formVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.6, delay: 0.2, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section className="py-24 px-4 md:px-8 text-gray-600 relative overflow-hidden">
+    <section className="sm:py-6 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 bg-white text-black relative overflow-hidden">
+      {/* SVG Background */}
       <div className="absolute inset-0">
         <svg
           className="w-full h-full"
           viewBox="0 0 1440 320"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid slice"
         >
           <path
             fill="#0D542B"
@@ -28,26 +48,47 @@ const PyfNewsletter = () => {
           </path>
         </svg>
       </div>
+
+      {/* Main Content */}
       <div className="max-w-5xl mx-auto text-center relative z-10">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-green-800 text-center">
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={textVariants}
+          className="text-2xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl font-bold text-green-900 mb-4 sm:mb-6 tracking-tight"
+        >
           Subscribe to Our Newsletter
-        </h2>
-        <p className="text-lg md:text-xl font-sans mb-8">
+        </motion.h2>
+        <motion.p
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={textVariants}
+          className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 text-black"
+        >
           Stay updated with the latest news and events from PYF.
-        </p>
-        <form className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+        </motion.p>
+        <motion.form
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={formVariants}
+          className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-3"
+        >
           <input
             type="email"
             placeholder="Enter your email"
-            className="w-full sm:w-64 p-3 rounded-lg bg-green-900/50 backdrop-blur-md text-white focus:outline-none focus:ring-2 focus:ring-green-800 transition duration-300"
+            className="w-full max-w-xs sm:max-w-sm p-2 sm:p-3 rounded-lg bg-green-900/50 backdrop-blur-md text-white border border-green-700 focus:outline-none focus:ring-2 focus:ring-green-800 transition duration-300 text-sm sm:text-base"
+            aria-label="Email address"
           />
           <button
             type="submit"
-            className="bg-green-600 text-white font-sans font-semibold py-3 px-6 rounded-lg hover:bg-green-400 hover:text-black transition duration-300"
+            className="sm:w-auto bg-green-600 text-white font-sans font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-green-500 transition duration-300 text-sm sm:text-base"
           >
             Subscribe
           </button>
-        </form>
+        </motion.form>
       </div>
     </section>
   );

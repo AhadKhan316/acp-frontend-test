@@ -1,21 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
-import HeroImg1 from "/src/assets/pyf-assets/pyf-hero-img1.jpg"
-import HeroImg2 from "/src/assets/pyf-assets/pyf-hero-img2.jpg"
-import HeroImg3 from "/src/assets/pyf-assets/pyf-hero-img3.jpg"
+import HeroImg1 from "/src/assets/pyf-assets/pyf-hero-img1.jpg";
+import HeroImg2 from "/src/assets/pyf-assets/pyf-hero-img2.jpg";
+import HeroImg3 from "/src/assets/pyf-assets/pyf-hero-img3.jpg";
 
 const PyfHero = () => {
-  const canvasRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Array of background images for PYF
-  const slides = [
-    HeroImg1,
-    HeroImg2,
-    HeroImg3,
-    // "../src/assets/pyf-assets/pyf-hero4.jpg",
-  ];
+  const slides = [HeroImg1, HeroImg2, HeroImg3];
 
   // Auto-slider logic
   useEffect(() => {
@@ -25,67 +21,6 @@ const PyfHero = () => {
 
     return () => clearInterval(interval);
   }, [slides.length]);
-
-  // Lantern Animation Logic (commented out as in your code)
-  // useEffect(() => {
-  //   const canvas = canvasRef.current;
-  //   const ctx = canvas.getContext("2d");
-  //   canvas.width = window.innerWidth;
-  //   canvas.height = window.innerHeight;
-
-  //   const lanterns = [];
-  //   const lanternCount = 20;
-
-  //   class Lantern {
-  //     constructor() {
-  //       this.x = Math.random() * canvas.width;
-  //       this.y = canvas.height + Math.random() * 100;
-  //       this.radius = Math.random() * 10 + 5;
-  //       this.speed = Math.random() * 1 + 0.5;
-  //       this.opacity = Math.random() * 0.5 + 0.5;
-  //     }
-
-  //     draw() {
-  //       ctx.beginPath();
-  //       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-  //       ctx.fillStyle = `rgba(193, 0, 7, ${this.opacity})`;
-  //       ctx.shadowBlur = 20;
-  //       ctx.shadowColor = "rgba(193, 0, 7, 0.8)";
-  //       ctx.fill();
-  //       ctx.closePath();
-  //     }
-
-  //     update() {
-  //       this.y -= this.speed;
-  //       this.x += Math.sin(this.y * 0.01) * 0.5; // Gentle sway
-  //       if (this.y < -this.radius) {
-  //         this.y = canvas.height + this.radius;
-  //         this.x = Math.random() * canvas.width;
-  //       }
-  //       this.draw();
-  //     }
-  //   }
-
-  //   for (let i = 0; i < lanternCount; i++) {
-  //     lanterns.push(new Lantern());
-  //   }
-
-  //   const animate = () => {
-  //     ctx.clearRect(0, 0, canvas.width, canvas.height);
-  //     lanterns.forEach((lantern) => lantern.update());
-  //     requestAnimationFrame(animate);
-  //   };
-
-  //   animate();
-
-  //   const handleResize = () => {
-  //     canvas.width = window.innerWidth;
-  //     canvas.height = window.innerHeight;
-  //   };
-  //   window.addEventListener("resize", handleResize);
-
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, []);
 
   // Framer Motion Variants
   const contentVariants = {
@@ -123,21 +58,20 @@ const PyfHero = () => {
       transition: { duration: 0.6, delay: 0.6, ease: "easeOut" },
     },
     hover: {
-      scale: 1.1,
-      boxShadow: "0px 0px 15px rgba(13, 84, 43, 0.7)",
-      transition: { duration: 0.3, yoyo: Infinity },
+      scale: 1.05,
+      transition: { duration: 0.3 },
     },
   };
 
   return (
-    <section className="relative w-full h-[80vh] sm:h-[70vh] md:h-[100vh] lg:h-[100vh] text-white flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[95vh] text-white flex items-center justify-center overflow-hidden">
       {/* Background Slider */}
       <div className="absolute inset-0 w-full h-full">
         {slides.map((slide, index) => (
           <img
             key={index}
             src={slide}
-            alt={`Slide ${index + 1}`}
+            alt={`Hero Slide ${index + 1}`}
             className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"
               }`}
           />
@@ -145,54 +79,71 @@ const PyfHero = () => {
       </div>
 
       {/* Linear Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-green-900/50 via-gray-900/80 to-gray-900/70 pointer-events-none z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 pointer-events-none z-10"></div>
 
-      {/* Canvas for Lantern Animation */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 pointer-events-none z-20"
-      />
-
-      {/* Content with Framer Motion */}
+      {/* Main Content */}
       <motion.div
-        className="relative z-30 text-center px-4 sm:px-6 lg:px-8 py-6 sm:py-8"
+        className="relative z-20 text-center px-4 sm:px-6 lg:px-8 py-4 sm:py-6 max-w-3xl mx-auto"
         initial="hidden"
         animate="visible"
         variants={contentVariants}
       >
         <motion.h1
-          className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold tracking-tight"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tight drop-shadow-lg"
           variants={titleVariants}
         >
-          <span className="block">Welcome to</span>
-          <span className="text-green-400 inline-block overflow-hidden whitespace-nowrap">
-            Pakistan Youth Festival
-          </span>
+          Welcome to the
+        </motion.h1>
+        <motion.h1
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight drop-shadow-lg text-green-600"
+          variants={titleVariants}
+        >
+          Pakistan Youth Festival
         </motion.h1>
         <motion.p
-          className="mt-2 sm:mt-3 text-1xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl tracking-tight opacity-90"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 opacity-90 drop-shadow"
           variants={subtitleVariants}
         >
-          Unleash your potential and celebrate youth spirit across Pakistan.
+          Unleash your potential
         </motion.p>
         <motion.button
-          className="mt-4 sm:mt-6 bg-green-600 text-white px-10 sm:px-14 py-4 rounded-full font-semibold hover:bg-green-400 hover:text-black transition duration-300 text-xs sm:text-sm md:text-base"
+          className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-500 transition duration-150 ease-in-out"
           variants={buttonVariants}
-          whileHover="hover"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          aria-label="Join Us Now"
         >
-          Join Us Now
+          <Link to="/pyf/register">Join Us Now</Link>
+          <ArrowRight className="ml-2 -mr-1 h-4 sm:h-5 w-4 sm:w-5" aria-hidden="true" />
         </motion.button>
       </motion.div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+      <div className="absolute bottom-12 sm:bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
         {slides.map((_, index) => (
           <span
             key={index}
-            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${index === currentSlide ? "bg-green-800" : "bg-gray-400"
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${index === currentSlide ? "bg-white" : "bg-green-600"
               }`}
           />
         ))}
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+        <div className="animate-bounce">
+          <svg
+            className="w-6 h-6 text-white"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
       </div>
     </section>
   );

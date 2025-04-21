@@ -21,10 +21,10 @@ const PYFProgramSection = () => {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 md:px-8 bg-gray-100">
+    <section className="py-16 px-4 sm:px-6 md:px-8 bg-white">
       {/* Section Heading */}
       <motion.h2
-        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-green-800 text-center mb-12 md:mb-16"
+        className="text-2xl sm:text-4xl md:text-4xl lg:text-4xl font-bold text-green-800 text-center mb-12 md:mb-16"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}

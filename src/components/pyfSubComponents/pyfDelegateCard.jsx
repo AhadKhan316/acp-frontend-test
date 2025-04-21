@@ -61,7 +61,7 @@ const PyfDelegateCard = ({ speakers, title }) => {
     ),
     responsive: [
       {
-        breakpoint: 1536, 
+        breakpoint: 1536,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
@@ -70,7 +70,7 @@ const PyfDelegateCard = ({ speakers, title }) => {
         },
       },
       {
-        breakpoint: 1280, 
+        breakpoint: 1280,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -79,7 +79,7 @@ const PyfDelegateCard = ({ speakers, title }) => {
         },
       },
       {
-        breakpoint: 1024, 
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -88,7 +88,7 @@ const PyfDelegateCard = ({ speakers, title }) => {
         },
       },
       {
-        breakpoint: 768, 
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -111,14 +111,14 @@ const PyfDelegateCard = ({ speakers, title }) => {
   const fallbackImage = "https://placehold.co/150x150";
 
   return (
-    <section className="py-16 px-4 sm:px-6 md:px-8 bg-green-800 text-gray-900 relative overflow-hidden">
+    <section className="py-6 px-4 sm:px-6 md:px-8 bg-green-800 text-black relative overflow-hidden">
       {/* Decorative Background Element */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <circle cx="50" cy="50" r="40" fill="url(#grad)" />
           <defs>
             <radialGradient id="grad" cx="0.5" cy="0.5" r="0.5">
-              <stop offset="0%" style={{ stopColor: "#026931" }} /> 
+              <stop offset="0%" style={{ stopColor: "#026931" }} />
               <stop offset="100%" style={{ stopColor: "transparent" }} />
             </radialGradient>
           </defs>
@@ -131,7 +131,7 @@ const PyfDelegateCard = ({ speakers, title }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12 md:mb-16 text-white tracking-tight"
+          className="text-2xl sm:text-4xl md:text-4xl lg:text-4xl font-bold text-center mb-6 md:mb-8 text-white tracking-tight"
         >
           {title}
         </motion.h2>
