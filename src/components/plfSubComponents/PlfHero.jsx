@@ -1,0 +1,134 @@
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { FaFeatherAlt } from "react-icons/fa";
+
+import PlfHeroImg1 from "/src/assets/plf-assets/plf-hero-img1.jpg"
+import PlfHeroImg2 from "/src/assets/plf-assets/plf-hero-img2.jpg"
+import PlfHeroImg3 from "/src/assets/plf-assets/plf-hero-img3.jpg"
+
+const PlfHero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    PlfHeroImg1,
+    PlfHeroImg2,
+    PlfHeroImg3,
+    // "../src/assets/plf-assets/hero-image4.png",
+  ];
+
+  // Auto-slider logic
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
+  // Framer Motion Variants
+  const contentVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, ease: "easeOut" },
+    },
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, delay: 0.2, ease: "easeOut" },
+    },
+  };
+
+  const subtitleVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 0.9,
+      y: 0,
+      transition: { duration: 0.8, delay: 0.4, ease: "easeOut" },
+    },
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.6, delay: 0.6, ease: "easeOut" },
+    },
+    hover: {
+      scale: 1.1,
+      boxShadow: "0px 0px 15px rgba(13, 84, 43, 0.7)",
+      transition: { duration: 0.3, yoyo: Infinity },
+    },
+  };
+
+  return (
+    <section className="relative w-full h-[80vh] sm:h-[70vh] md:h-[100vh] lg:h-[100vh] text-white flex items-center justify-center overflow-hidden">
+      {/* Background Slider */}
+      <div className="absolute inset-0 w-full h-full">
+        {slides.map((slide, index) => (
+          <img
+            key={index}
+            src={slide}
+            alt={`Slide ${index + 1}`}
+            className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
+          />
+        ))}
+      </div>
+
+      {/* Linear Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-gray-900/80 to-gray-900/70 pointer-events-none z-10"></div>
+
+      {/* Main Content */}
+      <motion.div
+        className="relative z-30 text-center px-4 sm:px-6 lg:px-8 py-6 sm:py-8"
+        initial="hidden"
+        animate="visible"
+        variants={contentVariants}
+      >
+        <motion.h1
+          className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold tracking-tight"
+          variants={titleVariants}
+        >
+          <span className="block">Welcome to</span>
+          <span className="text-green-700 inline-block overflow-hidden whitespace-nowrap">
+            Pakistan Literature Festival
+          </span>
+        </motion.h1>
+        <motion.h5
+          className="mt-2 sm:mt-3 text-xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-3xl tracking-tight opacity-90"
+          variants={subtitleVariants}
+        >
+          YOUTH IS THE ONLY WAY FORWARD!
+        </motion.h5>
+        <motion.button
+          className="mt-4 sm:mt-6 bg-green-900 text-white px-10 sm:px-14 py-4 rounded-full font-semibold hover:bg-green-800 transition duration-300 text-xs sm:text-sm md:text-base"
+          variants={buttonVariants}
+          whileHover="hover"
+        >
+          Join Us Now
+        </motion.button>
+      </motion.div>
+
+      {/* Slide Indicators */}
+      <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+        {slides.map((_, index) => (
+          <span
+            key={index}
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${index === currentSlide ? "bg-green-700" : "bg-gray-400"
+              }`}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default PlfHero;
