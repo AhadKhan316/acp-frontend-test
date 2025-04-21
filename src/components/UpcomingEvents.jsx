@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import posterImg1 from "../assets/Upcoming-events-img/sukkur-chapter-2.png";
 import posterImg2 from "../assets/Upcoming-events-img/Clement-Visage-event.jpg";
 import posterImg3 from "../assets/Upcoming-events-img/admission-2025.jpeg";
-
-// Import arrow icons (you can replace these with your preferred icons)
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const UpcomingEvents = () => {
@@ -18,6 +17,7 @@ const UpcomingEvents = () => {
       date: "May 15, 2025",
       description: "Join us for the second chapter of our cultural event in Sukkur, featuring workshops and performances.",
       image: posterImg1,
+      registerLink: "/register/sukkur-chapter-2",
     },
     {
       id: 2,
@@ -25,6 +25,7 @@ const UpcomingEvents = () => {
       date: "June 10, 2025",
       description: "A celebration of art and culture with performances, exhibitions, and more.",
       image: posterImg2,
+      registerLink: "https://acpkhi.com/registration",
     },
     {
       id: 3,
@@ -32,6 +33,7 @@ const UpcomingEvents = () => {
       date: "July 20, 2025",
       description: "Learn from experts in our series of art workshops, open to all ages.",
       image: posterImg3,
+      registerLink: "https://acpkhi.com/admissions",
     },
   ]);
 
@@ -113,9 +115,7 @@ const UpcomingEvents = () => {
           {dots.map((dot, index) => (
             <li key={index} className={dot.props.className}>
               <span
-                className={`block w-3 h-3 rounded-full ${dot.props.className.includes("slick-active")
-                  ? "bg-white"
-                  : "bg-gray-800"
+                className={`block w-3 h-3 rounded-full ${dot.props.className.includes("slick-active") ? "bg-white" : "bg-gray-800"
                   }`}
               ></span>
             </li>
@@ -136,7 +136,7 @@ const UpcomingEvents = () => {
         {/* Header Section */}
         <div className="text-center mb-10 sm:mb-12">
           <motion.h2
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4 "
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -175,13 +175,13 @@ const UpcomingEvents = () => {
                     <span className="inline-block w-1.5 h-1.5 bg-black rounded-full mx-2"></span>
                     2025
                   </p>
-                  {/* Registration Button */}
+                  {/* Registration Button with Unique Link */}
                   <motion.button
                     className="px-4 py-3 bg-[#B90602] text-white font-semibold text-sm rounded-xl shadow-md hover:bg-black/80 to-black/90 hover:shadow-lg transition duration-300 cursor-pointer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Register Now
+                    <Link to={event.registerLink}>Register Now</Link>
                   </motion.button>
                 </div>
               </div>
