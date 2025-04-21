@@ -56,7 +56,7 @@ const Academies = () => {
 
   return (
     <motion.section
-      className="min-h-screen bg-white py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8"
+      className="bg-white py-6 sm:py-6 lg:py-16 px-4 sm:px-6 lg:px-8"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -117,7 +117,7 @@ const Academies = () => {
               </motion.div>
 
               <motion.h1
-                className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-5 tracking-tight"
+                className="text-2xl sm:text-4xl lg:text-4xl font-bold text-gray-900 mb-5 tracking-tight"
                 variants={itemVariants}
               >
                 Academies

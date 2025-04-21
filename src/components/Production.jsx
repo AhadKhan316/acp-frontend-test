@@ -57,7 +57,7 @@ const ProductionMessage = () => {
   return (
     <motion.section
       id="production-message"
-      className="min-h-screen bg-white py-12 mt-20 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8"
+      className="bg-white py-12 sm:py-6 lg:py-16 px-4 sm:px-6 lg:px-8"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -118,7 +118,7 @@ const ProductionMessage = () => {
               </motion.div>
 
               <motion.h1
-                className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-2 tracking-tight"
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 tracking-tight"
                 variants={itemVariants}
               >
                 Productions
@@ -188,7 +188,7 @@ const ProductionMessage = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.9 }}
           >
-            <span className="text-base font-bold text-gray-900">Est. 1954</span>
+            <span className="text-base font-semibold text-gray-900">Est. 1954</span>
           </motion.div>
         </div>
       </div>

@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import posterImg1 from "../assets/poster-images/sukkur-chapter-2.png";
-import posterImg2 from "../assets/poster-images/sukkur-chapter-2.png";
-import posterImg3 from "../assets/poster-images/sukkur-chapter-2.png";
+import posterImg1 from "../assets/Upcoming-events-img/sukkur-chapter-2.png";
+import posterImg2 from "../assets/Upcoming-events-img/Clement-Visage-event.jpg";
+import posterImg3 from "../assets/Upcoming-events-img/admission-2025.jpeg";
 
 // Import arrow icons (you can replace these with your preferred icons)
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";

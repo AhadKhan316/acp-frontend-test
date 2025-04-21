@@ -12,6 +12,7 @@ import Academy from './components/Academy';
 import CommunityFeedback from './components/CommunityFeedback';
 import Production from './components/Production';
 // import OurSocial from './components/OurSocial';
+import OurSponsors from './components/Sponsors';
 import ContactUs from './Pages/ContactUs';
 
 // Pages
@@ -59,6 +60,7 @@ const App = () => {
               <Production />
               {/* <OurSocial /> */}
               <StayUpdated />
+              <OurSponsors />
             </>
           } />
           <Route path="/AcademiesPage" element={<AcademiesPage />} />

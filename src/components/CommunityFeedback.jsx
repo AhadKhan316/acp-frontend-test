@@ -52,7 +52,7 @@ const Feedback = () => {
   return (
     <motion.section
       id="user-feedback"
-      className="py-6 sm:py-6 bg-white relative"
+      className="py-6 sm:py-6 lg:py-16 bg-white relative"
       initial="hidden"
       animate="visible"
       variants={sectionVariants}
@@ -60,7 +60,7 @@ const Feedback = () => {
       {/* Subtle Background Gradient */}
       {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-black pointer-events-none"></div> */}
 
-      <div className="mx-4 px-4 sm:px-6 lg:px-8 relative">
+      <div className="mx-4 px-4  relative">
         <div className="text-center mb-10 sm:mb-12">
           <motion.h2
             className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-2 sm:mb-3"
