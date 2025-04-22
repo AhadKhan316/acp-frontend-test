@@ -127,7 +127,7 @@ const Academies = () => {
                 className="text-lg text-gray-600 mb-8 font-medium"
                 variants={itemVariants}
               >
-                School of Visual and Performing Art
+                School of Visual and Performing Arts
               </motion.p>
 
               {/* <motion.div
