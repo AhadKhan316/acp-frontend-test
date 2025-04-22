@@ -92,20 +92,26 @@ const WcfHero = () => {
         variants={contentVariants}
       >
         <motion.h1
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-2 tracking-tight drop-shadow-lg"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tight drop-shadow-lg"
           variants={titleVariants}
         >
-          WHERE CULTURE <span className="text-red-600">COMES ALIVE</span>
+          Welcome to the
+        </motion.h1>
+        <motion.h1
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight drop-shadow-lg text-red-700"
+          variants={titleVariants}
+        >
+          World Culture Festival
         </motion.h1>
 
         <motion.p
-          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-2 opacity-90 drop-shadow"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 opacity-90 drop-shadow"
           variants={subtitleVariants}
         >
-          35+ Countries - 250+ Artists - 100+ Performances
+          Where Culture Comes Alive!
         </motion.p>
 
-        <motion.p
+        {/* <motion.p
           className="text-base sm:text-lg md:text-xl lg:text-2xl mb-2 opacity-90 drop-shadow font-semibold"
           variants={subtitleVariants}
         >
@@ -117,7 +123,7 @@ const WcfHero = () => {
           variants={subtitleVariants}
         >
           26 SEP TO 02<sup>nd</sup> NOV AT ARTS COUNCIL KARACHI
-        </motion.p>
+        </motion.p> */}
 
         <motion.button
           className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-white bg-[#B90602] hover:bg-red-600 transition duration-150 ease-in-out"

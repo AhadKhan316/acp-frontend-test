@@ -91,10 +91,10 @@ const Hero = () => {
         variants={contentVariants}
       >
         <motion.h1
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tight drop-shadow-lg"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight drop-shadow-lg"
           variants={titleVariants}
         >
-          Hub of Art & Culture
+          Hub of Art
         </motion.h1>
         <motion.p
           className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 opacity-90 drop-shadow"
@@ -115,7 +115,7 @@ const Hero = () => {
       </motion.div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-12 sm:bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+      <div className="absolute bottom-10 sm:bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
         {slides.map((_, index) => (
           <span
             key={index}
@@ -126,7 +126,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+      <div className="absolute bottom-2 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-30">
         <div className="animate-bounce">
           <svg
             className="w-6 h-6 text-white"

@@ -79,7 +79,7 @@ const GoverningBody = () => {
           <div className="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
             <div className="flex flex-col lg:flex-row">
               {/* Image Section */}
-              <div className="lg:w-2/6 relative">
+              <div className="lg:w-2/7 relative">
                 <div className="aspect-square lg:aspect-auto lg:h-full">
                   <img
                     src={presidentImg}

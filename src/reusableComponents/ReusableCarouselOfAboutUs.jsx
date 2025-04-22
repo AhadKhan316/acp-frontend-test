@@ -56,7 +56,7 @@ const SectionWithSlider = ({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className={`flex flex-col lg:flex-row items-center gap-8 p-4 sm:p-6 lg:p-8 mb-16 mt-20 ${className}`}
+      className={`flex flex-col lg:flex-row items-center gap-8 p-4 sm:p-6 lg:p-8 ${className}`}
     >
       {/* Centered Title and Description */}
       <div className="w-full lg:w-1/2 mb-6 lg:mb-0 flex flex-col justify-center items-center text-center">

@@ -62,7 +62,7 @@ const ProductionMessage = () => {
       animate="visible"
       variants={containerVariants}
     >
-      <div className="mx-4">
+      <div className="mx-4 ">
         {/* Modern Image & Text Container */}
         <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">

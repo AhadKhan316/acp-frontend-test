@@ -38,9 +38,9 @@ const AboutUs = () => {
                   alt: "Historical 3",
                 },
               ]}
-              className="p-6 sm:p-8 rounded-2xl"
+              className="sm:p-8 rounded-2xl"
               imageClassName="object-cover w-full max-h-64 sm:max-h-80 lg:max-h-96 rounded-lg"
-              titleClassName="text-2xl sm:text-3xl lg:text-4xl font-bold text-cream-100 mb-4 text-center"
+              titleClassName="text-2xl sm:text-3xl lg:text-4xl font-bold text-cream-100 text-center"
               descriptionClassName="text-base sm:text-lg md:text-xl lg:max-w-3xl leading-loose mx-auto text-center"
             />
           </motion.div>
@@ -93,7 +93,7 @@ const AboutUs = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-12 text-center"
+          className="text-2xl sm:text-4xl lg:text-4xl font-bold text-black mb-6 text-center"
         >
           About Us
         </motion.h1>

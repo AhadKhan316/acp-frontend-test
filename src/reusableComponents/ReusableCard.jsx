@@ -20,7 +20,8 @@ const ReusableCard = ({ name, description, image, buttonText = "Learn More", sho
       viewport={{ once: true, margin: "0px 0px -50px 0px" }}
     >
       {/* Image container with aspect ratio */}
-      <div className="relative w-full aspect-[4/5] overflow-hidden">
+      {/* [4/5] */}
+      <div className="relative w-full aspect-[5/5] overflow-hidden">
         <motion.img
           src={image}
           alt={name}

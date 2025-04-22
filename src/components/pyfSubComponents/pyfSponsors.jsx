@@ -1,13 +1,19 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
+import SponsorLogo1 from '/src/assets/wcf-assets/sponsor1.png'
+import SponsorLogo2 from '/src//assets/wcf-assets/sponsor2.png'
+import SponsorLogo3 from '/src/assets/wcf-assets/sponsor3.png'
+import SponsorLogo4 from '/src/assets/wcf-assets/sponsor1.png'
+import SponsorLogo5 from '/src/assets/wcf-assets/sponsor3.png'
+
 const PyfSponsors = () => {
   const sponsors = [
-    { id: 1, name: 'InnovateCorp', logo: '/src/assets/wcf-assets/sponsor1.png' },
-    { id: 2, name: 'EcoSystems', logo: '/src/assets/wcf-assets/sponsor2.png' },
-    { id: 3, name: 'GlobalNet', logo: '/src/assets/wcf-assets/sponsor3.png' },
-    { id: 4, name: 'VisionLabs', logo: '/src/assets/wcf-assets/sponsor3.png' },
-    { id: 5, name: 'PeakPulse', logo: '/src/assets/wcf-assets/sponsor2.png' },
+    { id: 1, name: 'InnovateCorp', logo: SponsorLogo1 },
+    { id: 2, name: 'EcoSystems', logo: SponsorLogo2 },
+    { id: 3, name: 'GlobalNet', logo: SponsorLogo3 },
+    { id: 4, name: 'VisionLabs', logo: SponsorLogo4 },
+    { id: 5, name: 'PeakPulse', logo: SponsorLogo5 },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
