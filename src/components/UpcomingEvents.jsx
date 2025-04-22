@@ -1,46 +1,43 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import posterImg1 from "../assets/Upcoming-events-img/sukkur-chapter-2.png";
 import posterImg2 from "../assets/Upcoming-events-img/Clement-Visage-event.jpg";
 import posterImg3 from "../assets/Upcoming-events-img/admission-2025.jpeg";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const UpcomingEvents = () => {
   const [events, setEvents] = useState([
     {
       id: 1,
       title: "Sukkur Chapter 2",
-      date: "2025-04-22",
-      description: "Join us for the second chapter of our cultural event in Sukkur.",
+      date: "May 15, 2025",
+      description: "Join us for the second chapter of our cultural event in Sukkur, featuring workshops and performances.",
       image: posterImg1,
       registerLink: "/register/sukkur-chapter-2",
     },
     {
       id: 2,
       title: "Cultural Festival 2025",
-      date: "2025-04-23",
-      description: "A celebration of art and culture with performances.",
+      date: "June 10, 2025",
+      description: "A celebration of art and culture with performances, exhibitions, and more.",
       image: posterImg2,
       registerLink: "https://acpkhi.com/registration",
     },
     {
       id: 3,
       title: "Art Workshop Series",
-      date: "2025-07-20",
-      description: "Learn from experts in our series of art workshops.",
+      date: "July 20, 2025",
+      description: "Learn from experts in our series of art workshops, open to all ages.",
       image: posterImg3,
       registerLink: "https://acpkhi.com/admissions",
     },
   ]);
 
-  // Get today's date in YYYY-MM-DD format
-  const today = new Date().toISOString().split("T")[0];
-
-  const upcomingEvents = events
-    .filter((event) => event.date >= today)
-    .sort((a, b) => new Date(a.date) - new Date(b.date))
-    .slice(0, 3);
-
+  // Framer Motion variants for section animation
   const sectionVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -64,18 +61,73 @@ const UpcomingEvents = () => {
     },
   };
 
-  // Backend fetch (example, uncomment and customize as needed)
-  /*
-  useEffect(() => {
-    fetch("/api/events")
-      .then((res) => res.json())
-      .then((data) => setEvents(data));
-  }, []);
-  */
+  // Custom arrow components
+  const NextArrow = ({ onClick }) => (
+    <button
+      className="absolute right-0 top-1/3 -translate-y-1/2 z-10 bg-black/90 p-2 rounded-full hover:bg-black/70 transition-colors"
+      onClick={onClick}
+    >
+      <IoIosArrowForward className="text-white text-2xl" />
+    </button>
+  );
+
+  const PrevArrow = ({ onClick }) => (
+    <button
+      className="absolute left-0 top-1/3 -translate-y-1/2 z-10 bg-black/90 p-2 rounded-full hover:bg-black/70 transition-colors"
+      onClick={onClick}
+    >
+      <IoIosArrowBack className="text-white text-2xl" />
+    </button>
+  );
+
+  // Slider settings
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    variableHeight: true,
+    arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+    appendDots: (dots) => (
+      <div style={{ padding: "10px" }}>
+        <ul style={{ margin: "0px" }} className="flex justify-center space-x-2">
+          {dots.map((dot, index) => (
+            <li key={index} className={dot.props.className}>
+              <span
+                className={`block w-3 h-3 rounded-full ${dot.props.className.includes("slick-active") ? "bg-white" : "bg-gray-800"
+                  }`}
+              ></span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ),
+  };
 
   return (
     <motion.section
-      className="py-6 sm:py-8 bg-white relative"
+      className="py-6 sm:py-6 bg-white relative"
       initial="hidden"
       animate="visible"
       variants={sectionVariants}
@@ -93,74 +145,57 @@ const UpcomingEvents = () => {
           </motion.h2>
         </div>
 
-        {/* Upcoming Events Grid */}
-        {upcomingEvents.length > 0 ? (
-          <div className="mb-12">
-            <div
-              className={`grid ${upcomingEvents.length === 1
-                ? "grid-cols-1"
-                : upcomingEvents.length === 2
-                  ? "grid-cols-1 sm:grid-cols-2"
-                  : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-                } gap-4`}
+        {/* Event Slider */}
+        <Slider {...sliderSettings} className="pb-8">
+          {events.map((event, index) => (
+            <motion.div
+              key={event.id}
+              className="px-3"
+              custom={index}
+              variants={cardVariants}
+              whileHover="hover"
             >
-              {upcomingEvents.map((event, index) => (
-                <motion.div
-                  key={event.id}
-                  className="px-3"
-                  custom={index}
-                  variants={cardVariants}
-                  initial="hidden"
-                  animate="visible"
-                  whileHover="hover"
-                >
-                  <div className="flex flex-col">
-                    {/* Event Image */}
-                    <div className="w-full mb-4">
-                      <img
-                        src={event.image}
-                        alt={event.title}
-                        className="w-full h-auto object-contain rounded-lg"
-                      />
-                    </div>
-                    {/* Event Details */}
-                    <div className="text-center">
-                      <h3 className="text-lg sm:text-xl font-bold text-black mb-2">
-                        {event.title.toUpperCase()}
-                      </h3>
-                      <p className="text-black text-sm sm:text-base mb-4">
-                        {new Date(event.date).toLocaleDateString("en-US", {
-                          month: "long",
-                          day: "numeric",
-                          year: "numeric",
-                        })}
-                      </p>
-                      <motion.button
-                        className="px-4 py-3 bg-[#B90602] text-white font-semibold text-sm rounded-xl shadow-md hover:bg-black/80 transition duration-300"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Link to={event.registerLink}>Register Now</Link>
-                      </motion.button>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        ) : (
-          <p className="text-center text-black text-lg">
-            No upcoming events at this time.
-          </p>
-        )}
+              <div className="flex flex-col">
+                {/* Event Image */}
+                <div className="w-full mb-4">
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="w-full h-auto object-contain rounded-lg"
+                  />
+                </div>
+
+                {/* Event Details */}
+                <div className="text-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-black mb-2">
+                    {event.title.toUpperCase()}
+                  </h3>
+                  <p className="text-black text-sm sm:text-base flex items-center justify-center mb-4">
+                    {event.date}
+                    <span className="inline-block w-1.5 h-1.5 bg-black rounded-full mx-2"></span>
+                    2025
+                  </p>
+                  {/* Registration Button with Unique Link */}
+                  <motion.button
+                    className="px-4 py-3 bg-[#B90602] text-white font-semibold text-sm rounded-xl shadow-md hover:bg-black/80 to-black/90 hover:shadow-lg transition duration-300 cursor-pointer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Link to={event.registerLink}>Register Now</Link>
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </Slider>
 
         {/* View All Events Button */}
         <div className="text-center mt-8">
           <motion.button
-            className="px-6 py-4 bg-[#B90602] text-white font-semibold text-sm sm:text-base rounded-xl shadow-md hover:bg-black/80 transition duration-300"
+            className="px-6 py-4 bg-[#B90602] text-white font-semibold text-sm sm:text-base rounded-xl shadow-md hover:bg-black/80 to-black/90 hover:shadow-lg transition duration-300 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            aria-label="View All Events"
+            aria-label="Get Involved"
           >
             View All Events
           </motion.button>

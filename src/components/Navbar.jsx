@@ -141,7 +141,7 @@ const Navbar = () => {
                     </li>
 
                     <li><NavLink to="/AcademiesPage">Academies</NavLink></li>
-                    <li><NavLink to="/VenuesPage">Venues</NavLink></li>
+                    <li><NavLink to="/VenuesPage">Facilities</NavLink></li>
                     <li><NavLink to="/events">Events</NavLink></li>
 
                     <li className="relative group">
@@ -203,7 +203,7 @@ const Navbar = () => {
                         </li>
 
                         <li><NavLink to="/AcademiesPage">Academies</NavLink></li>
-                        <li><NavLink to="/VenuesPage">Venues</NavLink></li>
+                        <li><NavLink to="/VenuesPage">Facilities</NavLink></li>
                         <li><NavLink to="/events">Events</NavLink></li>
                         <li className="relative group">
                             <DropdownButton onClick={(e) => toggleSubMenu("resources", e)} isOpen={isSubMenuOpen["resources"]}>Resources</DropdownButton>

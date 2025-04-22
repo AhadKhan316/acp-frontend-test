@@ -120,14 +120,14 @@ const Academies = () => {
                 className="text-2xl sm:text-4xl lg:text-4xl font-bold text-gray-900 mb-5 tracking-tight"
                 variants={itemVariants}
               >
-                Academies
+                SOVAPA
               </motion.h1>
 
               <motion.p
                 className="text-lg text-gray-600 mb-8 font-medium"
                 variants={itemVariants}
               >
-                Shaping Creative Minds Since 1954
+                School of Visual and Performing Art
               </motion.p>
 
               {/* <motion.div
@@ -139,7 +139,7 @@ const Academies = () => {
                 className="text-black text-base sm:text-lg leading-relaxed mb-6"
                 variants={itemVariants}
               >
-                ACPKHI is a sanctuary for artistic growth, fostering young talents to become visionary creators who inspire and elevate our nation.
+                Shaping Creative Minds Since 1954, ACPKHI is a sanctuary for artistic growth, fostering young talents to become visionary creators who inspire and elevate our nation.
               </motion.p>
 
               <motion.p
