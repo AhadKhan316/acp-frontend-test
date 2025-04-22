@@ -149,7 +149,7 @@ const About = () => {
       {/* Subtle Background Gradient */}
       {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-black pointer-events-none"></div> */}
 
-      <div className="mx-4 px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="py-8 sm:py-10 rounded-xl overflow-hidden">
           {/* Tab Buttons */}
           <div className="flex justify-center space-x-4 sm:space-x-6 mb-8 sm:mb-10">

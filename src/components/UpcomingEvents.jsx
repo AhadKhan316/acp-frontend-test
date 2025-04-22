@@ -4,21 +4,21 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-//  
+import posterImg1 from "../assets/Upcoming-events-img/sukkur-chapter-2.png";
 import posterImg2 from "../assets/Upcoming-events-img/Clement-Visage-event.jpg";
 import posterImg3 from "../assets/Upcoming-events-img/admission-2025.jpeg";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const UpcomingEvents = () => {
   const [events, setEvents] = useState([
-    // {
-    //   id: 1,
-    //   title: "Sukkur Chapter 2",
-    //   date: "May 15, 2025",
-    //   description: "Join us for the second chapter of our cultural event in Sukkur, featuring workshops and performances.",
-    //   image: posterImg1,
-    //   registerLink: "/register/sukkur-chapter-2",
-    // },
+    {
+      id: 1,
+      title: "Sukkur Chapter 2",
+      date: "May 15, 2025",
+      description: "Join us for the second chapter of our cultural event in Sukkur, featuring workshops and performances.",
+      image: posterImg1,
+      registerLink: "/register/sukkur-chapter-2",
+    },
     {
       id: 2,
       title: "Cultural Festival 2025",
@@ -132,7 +132,7 @@ const UpcomingEvents = () => {
       animate="visible"
       variants={sectionVariants}
     >
-      <div className="mx-4 px-4 sm:px-6 lg:px-8">
+      <div className="mx-2 px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-10 sm:mb-12">
           <motion.h2

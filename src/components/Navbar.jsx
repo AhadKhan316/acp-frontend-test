@@ -112,7 +112,7 @@ const Navbar = () => {
                             <div className="absolute top-full left-0 mt-2 w-64 bg-black rounded-md z-40">
                                 <NavLink to="/about">About Us</NavLink>
                                 <NavLink to="/GoverningBody">Governing Body</NavLink>
-                                <NavLink to="/TeamMembers">Team</NavLink>
+                                <NavLink to="/TeamMembers">Our Team</NavLink>
                             </div>
                         )}
                     </li>
@@ -174,7 +174,7 @@ const Navbar = () => {
                                 <div className="relative top-full left-0 mt-2 w-64 bg-black rounded-md z-40">
                                     <NavLink to="/about">About Us</NavLink>
                                     <NavLink to="/GoverningBody">Governing Body</NavLink>
-                                    <NavLink to="/TeamMembers">Team</NavLink>
+                                    <NavLink to="/TeamMembers">Our Team</NavLink>
                                 </div>
                             )}
                         </li>
