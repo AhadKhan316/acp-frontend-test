@@ -121,7 +121,7 @@ const ProductionMessage = () => {
                 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 tracking-tight"
                 variants={itemVariants}
               >
-                Productions
+                Initiative
               </motion.h1>
 
               <motion.p

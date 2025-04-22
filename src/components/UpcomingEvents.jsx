@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import posterImg1 from "../assets/Upcoming-events-img/sukkur-chapter-2.png";
+//  
 import posterImg2 from "../assets/Upcoming-events-img/Clement-Visage-event.jpg";
 import posterImg3 from "../assets/Upcoming-events-img/admission-2025.jpeg";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
