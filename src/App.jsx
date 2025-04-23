@@ -56,10 +56,11 @@ const App = () => {
               <UpcomingEvents />
               {/* <PresidentMessage /> */}
               <Academy />
-              <CommunityFeedback />
+              
               <Production />
               {/* <OurSocial /> */}
               <StayUpdated />
+              <CommunityFeedback />
               <OurSponsors />
             </>
           } />
