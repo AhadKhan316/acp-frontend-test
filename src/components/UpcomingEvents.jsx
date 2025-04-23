@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import posterImg1 from "../assets/Upcoming-events-img/sukkur-chapter-2.png";
-import posterImg2 from "../assets/Upcoming-events-img/Clement-Visage-event.jpg";
+// import posterImg2 from "../assets/Upcoming-events-img/Clement-Visage-event.jpg";
 import posterImg3 from "../assets/Upcoming-events-img/admission-2025.jpeg";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
@@ -19,17 +19,17 @@ const UpcomingEvents = () => {
       image: posterImg1,
       registerLink: "/register/sukkur-chapter-2",
     },
-    {
-      id: 2,
-      title: "Cultural Festival 2025",
-      date: "June 10, 2025",
-      description: "A celebration of art and culture with performances, exhibitions, and more.",
-      image: posterImg2,
-      registerLink: "https://acpkhi.com/registration",
-    },
+    // {
+    //   id: 2,
+    //   title: "Cultural Festival 2025",
+    //   date: "June 10, 2025",
+    //   description: "A celebration of art and culture with performances, exhibitions, and more.",
+    //   image: posterImg2,
+    //   registerLink: "https://acpkhi.com/registration",
+    // },
     {
       id: 3,
-      title: "Art Workshop Series",
+      title: "Admission Open 2025-26",
       date: "July 20, 2025",
       description: "Learn from experts in our series of art workshops, open to all ages.",
       image: posterImg3,
