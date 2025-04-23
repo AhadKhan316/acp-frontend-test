@@ -71,7 +71,7 @@ const StayUpdated = () => {
           preserveAspectRatio="xMidYMid slice"
         >
           <path
-            fill="#B90602"
+            fill="#000000"
             fillOpacity="0.9"
             d="M0,224L48,213.3C96,203,192,181,288,176C384,171,480,181,576,192C672,203,768,213,864,213.3C960,213,1056,203,1152,192C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           >
@@ -129,7 +129,7 @@ const StayUpdated = () => {
           <motion.button
             type="submit"
             disabled={isLoading}
-            className={` sm:w-auto bg-[#B90602] text-white font-sans font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-black transition duration-300 text-sm sm:text-base ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={` sm:w-auto bg-[#B90602] text-white font-sans font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-[#B90602] transition duration-300 text-sm sm:text-base ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
             whileHover={isLoading ? {} : { scale: 1.05 }}
             whileTap={isLoading ? {} : { scale: 0.95 }}
           >
