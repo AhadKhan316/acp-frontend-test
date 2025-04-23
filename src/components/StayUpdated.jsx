@@ -129,7 +129,7 @@ const StayUpdated = () => {
           <motion.button
             type="submit"
             disabled={isLoading}
-            className={` sm:w-auto bg-[#000000] text-white font-sans font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-[#B90602] transition duration-300 text-sm sm:text-base ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={` sm:w-auto bg-[#000000] text-white font-sans font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-[#B90602gi] transition duration-300 text-sm sm:text-base ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
             whileHover={isLoading ? {} : { scale: 1.05 }}
             whileTap={isLoading ? {} : { scale: 0.95 }}
           >
