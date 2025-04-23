@@ -65,9 +65,8 @@ const VoterVerification = () => {
                   onFocus={() => setIsFocused(true)}
                   onBlur={() => setIsFocused(false)}
                   placeholder="e.g. ACP12345, 42101-1234567-8, or John Doe"
-                  className={`w-full px-5 py-4 text-lg border-2 ${
-                    isFocused ? "border-red-500" : "border-gray-200"
-                  } rounded-xl focus:outline-none focus:ring-2 focus:ring-red-300 transition-all duration-200`}
+                  className={`w-full px-5 py-4 text-lg border-2 ${isFocused ? "border-red-500" : "border-gray-200"
+                    } rounded-xl focus:outline-none focus:ring-2 focus:ring-red-300 transition-all duration-200`}
                   aria-label="Membership, CNIC, or Name"
                 />
                 {isFocused && (
