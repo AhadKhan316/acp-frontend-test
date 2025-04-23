@@ -64,7 +64,7 @@ const PtfHero = () => {
   };
 
   return (
-    <section className="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[95vh] text-white flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-[50vh] sm:h-[50vh] md:h-[60vh] lg:h-[95vh] text-white flex items-center justify-center overflow-hidden">
       {/* Background Slider */}
       <div className="absolute inset-0 w-full h-full">
         {slides.map((slide, index) => (
@@ -89,19 +89,19 @@ const PtfHero = () => {
         variants={contentVariants}
       >
         <motion.h1
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tight drop-shadow-lg"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-2 tracking-tight drop-shadow-lg"
           variants={titleVariants}
         >
-          Welcome to the 
+          Welcome to the
         </motion.h1>
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-red-700"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 tracking-tight text-red-700"
           variants={titleVariants}
         >
           Pakistan Theatre Festival
         </motion.h1>
         <motion.p
-          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 opacity-90 drop-shadow"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 opacity-90 drop-shadow"
           variants={subtitleVariants}
         >
           Celebrating art & culture
