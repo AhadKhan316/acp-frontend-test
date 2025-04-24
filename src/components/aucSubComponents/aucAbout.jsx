@@ -14,7 +14,7 @@ const AboutSection = () => {
             Aalmi Urdu Conference
           </h3>
           <p className="text-gray-800 leading-relaxed text-sm sm:text-base">
-            The Aalmi Urdu Conference returns to the Arts Council of Pakistan, Karachi, with the 17th year spotlighting Karachi - the vibrant city that has shaped the nation's very soul. This year’s theme centres on delving into the city’s rich heritage of literature, music, dance, theatre, and art, all through the lens of Urdu.
+            The Aalmi Urdu Conference returns to the Arts Council of Pakistan, Karachi, with the 17th year spotlighting Karachi - the vibrant city that has shaped the Nations very soul. This year’s theme centres on delving into the city’s rich heritage of literature, music, dance, theatre, and art, all through the lens of Urdu.
           </p>
         </div>
       ),
