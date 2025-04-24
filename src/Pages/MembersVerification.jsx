@@ -26,21 +26,21 @@ const VoterVerification = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30 flex items-end pb-8 md:pb-12 justify-center">
           <div className="text-center px-4">
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-2">
+            <h1 className="text-xl md:text-5xl font-bold text-white mb-2">
               Arts Council of Pakistan Karachi
             </h1>
-            <h2 className="text-xl md:text-3xl font-semibold text-white">
+            <h3 className="text-lg md:text-3xl font-bold text-white">
               Voter Verification for Election 2025–26
-            </h2>
+            </h3>
           </div>
         </div>
       </div>
 
       {/* Verification Card */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 relative z-10">
+      <div className="max-w-4xl mx-auto px-8 sm:px-6 lg:px-8 mt-20 relative z-10">
         <div className="bg-white rounded-xl shadow-xl p-6 md:p-8 lg:p-10 border border-gray-100">
           <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+            <h3 className="text-xl md:text-3xl font-bold text-gray-900 mb-2">
               Verify Your Membership
             </h3>
             <p className="text-gray-600">
@@ -52,7 +52,7 @@ const VoterVerification = () => {
             <div>
               <label
                 htmlFor="membershipInput"
-                className="block text-lg font-medium text-gray-800 mb-3"
+                className="block text-base font-medium text-black mb-3"
               >
                 Membership No., CNIC, or Name
               </label>
@@ -65,9 +65,8 @@ const VoterVerification = () => {
                   onFocus={() => setIsFocused(true)}
                   onBlur={() => setIsFocused(false)}
                   placeholder="e.g. ACP12345, 42101-1234567-8, or John Doe"
-                  className={`w-full px-5 py-4 text-lg border-2 ${
-                    isFocused ? "border-red-500" : "border-gray-200"
-                  } rounded-xl focus:outline-none focus:ring-2 focus:ring-red-300 transition-all duration-200`}
+                  className={`w-full px-5 py-4 text-lg border-2 ${isFocused ? "border-red-500" : "border-gray-200"
+                    } rounded-xl focus:outline-none focus:ring-2 focus:ring-red-300 transition-all duration-200`}
                   aria-label="Membership, CNIC, or Name"
                 />
                 {isFocused && (

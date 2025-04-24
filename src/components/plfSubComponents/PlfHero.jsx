@@ -94,7 +94,7 @@ const PlfHero = () => {
         variants={contentVariants}
       >
         <motion.h1
-          className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold tracking-tight"
+          className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight"
           variants={titleVariants}
         >
           <span className="block">Welcome to</span>
@@ -103,7 +103,7 @@ const PlfHero = () => {
           </span>
         </motion.h1>
         <motion.h5
-          className="mt-2 sm:mt-3 text-xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-3xl tracking-tight opacity-90"
+          className="mt-1 sm:mt-2 text-xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-3xl tracking-tight opacity-90"
           variants={subtitleVariants}
         >
           YOUTH IS THE ONLY WAY FORWARD!

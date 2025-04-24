@@ -2,7 +2,7 @@ import React from "react";
 
 const Career = () => {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* Hero Banner with Gradient Overlay */}
       <div className="relative w-full h-64 md:h-96 overflow-hidden">
         <img
@@ -24,7 +24,7 @@ const Career = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-6xl mx-auto px-8 sm:px-6 lg:px-8 py-12">
         {/* Introduction */}
         <div className="bg-white rounded-xl shadow-lg p-8 mb-12 text-center">
           <p className="text-lg md:text-xl leading-relaxed text-gray-700 max-w-3xl mx-auto">
@@ -34,9 +34,9 @@ const Career = () => {
 
         {/* Open Job Vacancies */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-10 relative">
+          <h2 className="text-2xl font-bold text-center mb-10 relative">
             <span className="bg-white px-4 relative z-10">Current Opportunities</span>
-            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-200 -z-0"></div>
+            {/* <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-200 -z-0"></div> */}
           </h2>
 
           <div className="grid gap-6 md:grid-cols-2">
@@ -94,9 +94,9 @@ const Career = () => {
 
         {/* Previous Job Vacancies */}
         <div>
-          <h2 className="text-3xl font-bold text-center mb-10 relative">
+          <h2 className="text-2xl font-bold text-center mb-10 relative">
             <span className="bg-white px-4 relative z-10">Previous Opportunities</span>
-            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-200 -z-0"></div>
+            {/* <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-200 -z-0"></div> */}
           </h2>
 
           <div className="bg-white rounded-xl shadow-md overflow-hidden">

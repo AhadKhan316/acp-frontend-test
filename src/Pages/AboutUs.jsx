@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import SectionWithSlider from "../reusableComponents/ReusableCarouselOfAboutUs"; // Updated import
+import SectionWithSlider from "../reusableComponents/ReusableCarouselOfAboutUs";
 
 const AboutUs = () => {
   const [activeSection, setActiveSection] = useState("history");

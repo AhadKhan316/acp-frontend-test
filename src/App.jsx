@@ -64,15 +64,15 @@ const App = () => {
               <OurSponsors />
             </>
           } />
-          <Route path="/AcademiesPage" element={<AcademiesPage />} />
-          <Route path="/VenuesPage" element={<VenuesPage />} />
+          <Route path="/academies" element={<AcademiesPage />} />
+          <Route path="/facilities" element={<VenuesPage />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/GoverningBody" element={<GoverningBody />} />
-          <Route path="/TeamMembers" element={<TeamMembers />} />
-          <Route path="/MembersVerification" element={<MembersVerification />} />
-          <Route path="/Career" element={<Career />} />
-          <Route path="/Tenders" element={<Tenders />} />
-          <Route path="/ContactUs" element={<ContactUs />} />
+          <Route path="/governingBody" element={<GoverningBody />} />
+          <Route path="/teamMembers" element={<TeamMembers />} />
+          <Route path="/membersVerification" element={<MembersVerification />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/tenders" element={<Tenders />} />
+          <Route path="/contactUs" element={<ContactUs />} />
         </Route>
 
         {/* Routes without Navbar and Footer */}

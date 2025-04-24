@@ -58,6 +58,28 @@ const SectionWithSlider = ({
       transition={{ duration: 0.8 }}
       className={`flex flex-col lg:flex-row items-center gap-8 p-4 sm:p-6 lg:p-8 ${className}`}
     >
+
+      {/* Slider Section */}
+      <div className="w-full lg:w-1/2 relative">
+        <Slider
+          {...sliderSettings}
+          className="rounded-xl overflow-hidden backdrop-blur-md"
+        >
+          {images.map((image, index) => (
+            <div key={index} className="">
+              <div className="transform transition-all duration-300 hover:scale-105">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className={`w-full h-auto object-cover rounded-xl ${imageClassName}`}
+                // loading="lazy"
+                />
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+
       {/* Centered Title and Description */}
       <div className="w-full lg:w-1/2 mb-6 lg:mb-0 flex flex-col justify-center items-center text-center">
         <h2
@@ -72,26 +94,7 @@ const SectionWithSlider = ({
         </p>
       </div>
 
-      {/* Slider Section */}
-      <div className="w-full lg:w-1/2 relative">
-        <Slider
-          {...sliderSettings}
-          className="rounded-xl overflow-hidden backdrop-blur-md"
-        >
-          {images.map((image, index) => (
-            <div key={index} className="px-3">
-              <div className="transform transition-all duration-300 hover:scale-105">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className={`w-full h-auto object-cover rounded-xl ${imageClassName}`}
-                // loading="lazy"
-                />
-              </div>
-            </div>
-          ))}
-        </Slider>
-      </div>
+
     </motion.div>
   );
 };

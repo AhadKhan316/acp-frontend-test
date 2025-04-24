@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const ContactUs = () => {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-white text-black">
       {/* Hero Banner with Gradient Overlay */}
       <div className="relative w-full h-64 md:h-96 overflow-hidden">
         <motion.img
@@ -28,7 +28,7 @@ const ContactUs = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-6xl mx-auto px-8 sm:px-6 lg:px-8 py-12">
         {/* Introduction */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -70,12 +70,12 @@ const ContactUs = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">For General Queries</h3>
+              <h3 className="text-2xl font-bold text-black">For General Queries</h3>
             </div>
             <div className="space-y-5">
               <div className="flex items-start gap-4">
                 <svg
-                  className="w-6 h-6 text-gray-500 mt-1 flex-shrink-0"
+                  className="w-6 h-6 text-black mt-1 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -100,7 +100,7 @@ const ContactUs = () => {
               </div>
               <div className="flex items-start gap-4">
                 <svg
-                  className="w-6 h-6 text-gray-500 mt-1 flex-shrink-0"
+                  className="w-6 h-6 text-black mt-1 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -150,7 +150,7 @@ const ContactUs = () => {
             <div className="space-y-5">
               <div className="flex items-start gap-4">
                 <svg
-                  className="w-6 h-6 text-gray-500 mt-1 flex-shrink-0"
+                  className="w-6 h-6 text-black mt-1 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -175,7 +175,7 @@ const ContactUs = () => {
               </div>
               <div className="flex items-start gap-4">
                 <svg
-                  className="w-6 h-6 text-gray-500 mt-1 flex-shrink-0"
+                  className="w-6 h-6 text-black mt-1 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -210,8 +210,8 @@ const ContactUs = () => {
           className=" overflow-hidden"
         >
           <div className="p-8 text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">Our Location</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl font-bold text-black mb-2">Our Location</h2>
+            <p className="text-lg text-black">
               Arts Council of Pakistan Karachi,<br />
               M.R Kiyani Road, Saddar Karachi,<br />
               Pakistan.

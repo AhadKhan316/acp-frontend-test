@@ -32,7 +32,7 @@ const Tenders = () => {
       </div>
 
       {/* Filter Section */}
-      <div className="w-full max-w-3xl mb-12">
+      <div className="w-full max-w-8xl mb-12 ">
         <div className="flex justify-center mb-6">
           <label
             htmlFor="filterDate"
@@ -45,7 +45,7 @@ const Tenders = () => {
             id="filterDate"
             value={filterDate}
             onChange={handleFilterChange}
-            className="px-12 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition duration-200 text-black"
+            className="px-2 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition duration-200 text-black"
             aria-label="Filter tenders by date"
           />
         </div>
