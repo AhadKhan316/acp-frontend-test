@@ -101,7 +101,7 @@ const UpcomingEvents = () => {
             whileTap={{ scale: 0.95 }}
             aria-label="View Calendar"
           >
-            <Link to="/calendar" className="flex items-center">
+            <Link to="/upcomingEvents" className="flex items-center">
               Calendar
               <IoIosArrowForward className="ml-2 text-lg" />
             </Link>

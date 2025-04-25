@@ -25,6 +25,11 @@ import MembersVerification from './Pages/MembersVerification';
 import Career from './Pages/Careers';
 import Tenders from './Pages/Tenders';
 
+// ACP Sub Pages
+import UpcomingEventsPage from './Pages/AcpSubPages/UpcomingEventsPage';
+import AcademyCoursePage from './Pages/AcpSubPages/AcademyCoursePage';
+import VenueSubPage from './Pages/AcpSubPages/VenuesPage';
+
 // WCF Page
 import WorldCultureFestival from './Pages/WorldCulturalFestival';
 
@@ -56,7 +61,7 @@ const App = () => {
               <UpcomingEvents />
               {/* <PresidentMessage /> */}
               <Academy />
-              
+
               <Production />
               {/* <OurSocial /> */}
               <StayUpdated />
@@ -64,6 +69,13 @@ const App = () => {
               <OurSponsors />
             </>
           } />
+
+          {/* ACP Sub Pages */}
+          <Route path="/upcomingEvents" element={<UpcomingEventsPage />}></Route>
+          <Route path="/academies/:department" element={<AcademyCoursePage />}></Route>
+          <Route path="/venues/:venueId" element={<VenueSubPage />} />
+
+
           <Route path="/academies" element={<AcademiesPage />} />
           <Route path="/facilities" element={<VenuesPage />} />
           <Route path="/about" element={<AboutUs />} />

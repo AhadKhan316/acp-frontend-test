@@ -159,8 +159,9 @@ const Footer = () => {
                   </svg>
                 </span>
                 <div>
-                  <p className="font-bold text-xl sm:text-xl lg:text-xl text-white">Phone</p>
-                  <p className="text-gray-200 text-base sm:text-sm max-w-xs">+92-300-0802391</p>
+                  <p className="font-bold text-xl sm:text-xl lg:text-xl text-white">UN No</p>
+                  <p className="text-gray-200 text-base sm:text-sm max-w-xs">021-111-227-544
+                  </p>
                 </div>
               </div>
               <div className="flex items-start justify-center sm:justify-start">
@@ -211,7 +212,7 @@ const Footer = () => {
                 <div>
                   <p className="font-bold text-xl sm:text-xl lg:text-xl text-white">Location</p>
                   <p className="text-gray-200 text-base sm:text-sm max-w-xs">
-                    M.R. Kiyani Road, Karachi, Pakistan
+                    M.R. Kiyani Road, Karachi. Pakistan.
                   </p>
                 </div>
               </div>
