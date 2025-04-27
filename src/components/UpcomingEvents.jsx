@@ -11,7 +11,7 @@ const UpcomingEvents = () => {
     {
       id: 1,
       title: "Arts Alumni Festival",
-      date: "2025-05-15",
+      // date: "2025-05-15",
       description: "Join us for the second chapter of our cultural event in Sukkur.",
       image: posterImg1,
       registerLink: "https://acpkhi.com/alumni",
@@ -27,7 +27,7 @@ const UpcomingEvents = () => {
     {
       id: 3,
       title: "Sovapa Admission Open",
-      date: "2025-07-20",
+      // date: "2025-07-20",
       description: "Learn from experts in our series of art workshops.",
       image: posterImg3,
       registerLink: "https://acpkhi.com/admissions",
