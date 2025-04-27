@@ -115,6 +115,13 @@ const CoursePage = () => {
           "Monthly Fee for the course: Rs. 8,000",
         ],
       },
+      instructors: [
+        { name: "Muhammad Ali", title: "Head of Department", image: "https://via.placeholder.com/150" },
+        { name: "Sachindar", title: "Graphic Design Teacher", image: "https://via.placeholder.com/150" },
+        { name: "Muhammad Owais", title: "UX/UI & 3D Graphic Designer", image: "https://via.placeholder.com/150" },
+        { name: "Muhammad Owais", title: "UX/UI & 3D Graphic Designer", image: "https://via.placeholder.com/150" },
+        { name: "Muhammad Owais", title: "UX/UI & 3D Graphic Designer", image: "https://via.placeholder.com/150" },
+      ],
       registerLink: "/academies/graphic-design/register",
     },
     dance: {
@@ -150,6 +157,10 @@ const CoursePage = () => {
           "Monthly Fee for the course: Rs. 6,000",
         ],
       },
+      instructors: [
+        { name: "Aisha Khan", title: "Lead Choreographer", image: "https://via.placeholder.com/150" },
+        { name: "Rahul Sharma", title: "Dance Instructor", image: "https://via.placeholder.com/150" },
+      ],
       registerLink: "/academies/dance/register",
     },
     "fine-arts": {
@@ -185,6 +196,11 @@ const CoursePage = () => {
           "Monthly Fee for the course: Rs. 9,000",
         ],
       },
+      instructors: [
+        { name: "Sara Ahmed", title: "Head of Fine Arts", image: "https://via.placeholder.com/150" },
+        { name: "Bilal Hassan", title: "Painting Instructor", image: "https://via.placeholder.com/150" },
+        { name: "Nadia Malik", title: "Sculpture Teacher", image: "https://via.placeholder.com/150" },
+      ],
       registerLink: "/academies/fine-arts/register",
     },
     music: {
@@ -220,6 +236,10 @@ const CoursePage = () => {
           "Monthly Fee for the course: Rs. 7,000",
         ],
       },
+      instructors: [
+        { name: "Zainab Raza", title: "Vocal Coach", image: "https://via.placeholder.com/150" },
+        { name: "Omar Farooq", title: "Instrument Instructor", image: "https://via.placeholder.com/150" },
+      ],
       registerLink: "/academies/music/register",
     },
     "textile-design": {
@@ -255,6 +275,11 @@ const CoursePage = () => {
           "Monthly Fee for the course: Rs. 8,500",
         ],
       },
+      instructors: [
+        { name: "Fatima Noor", title: "Head of Textile Design", image: "https://via.placeholder.com/150" },
+        { name: "Ali Raza", title: "Textile Designer", image: "https://via.placeholder.com/150" },
+        { name: "Hina Khan", title: "Pattern Making Expert", image: "https://via.placeholder.com/150" },
+      ],
       registerLink: "/academies/textile-design/register",
     },
     theatre: {
@@ -290,6 +315,10 @@ const CoursePage = () => {
           "Monthly Fee for the course: Rs. 6,500",
         ],
       },
+      instructors: [
+        { name: "Khalid Mehmood", title: "Theatre Director", image: "https://via.placeholder.com/150" },
+        { name: "Sana Javed", title: "Acting Coach", image: "https://via.placeholder.com/150" },
+      ],
       registerLink: "/academies/theatre/register",
     },
   };
@@ -381,7 +410,7 @@ const CoursePage = () => {
         <section>
           {/* Tabs */}
           <div className="mb-12 flex flex-col sm:flex-row gap-2 sm:gap-4">
-            {["details", "howToApply", "enroll"].map((tab) => (
+            {["details", "instructors", "howToApply", "enroll"].map((tab) => (
               <motion.button
                 key={tab}
                 className={`px-6 py-3 rounded-xl text-lg font-semibold capitalize transition-colors duration-300 ${activeTab === tab
@@ -533,6 +562,43 @@ const CoursePage = () => {
                   >
                     Submit
                   </motion.button>
+                </div>
+              </motion.div>
+            )}
+
+            {activeTab === "instructors" && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-4 border-red-600 pl-4">
+                  Instructors
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {currentCourse.instructors.map((instructor, index) => (
+                    <motion.div
+                      key={index}
+                      className="bg-white rounded-lg shadow-md p-6 text-center border border-gray-200"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.2 }}
+                      whileHover={{ y: -5 }}
+                    >
+                      <div className="w-full h-48 mb-4 overflow-hidden rounded-md border-2 border-red-600">
+                        <img
+                          src={instructor.image}
+                          alt={instructor.name}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                          style={{ backgroundColor: "#e5e7eb" }}
+                        />
+                      </div>
+                      <div className="border-t-2 border-red-600 w-16 mx-auto mb-3"></div>
+                      <h3 className="text-lg font-semibold text-gray-900">{instructor.name}</h3>
+                      <p className="text-sm text-gray-600">{instructor.title}</p>
+                    </motion.div>
+                  ))}
                 </div>
               </motion.div>
             )}
