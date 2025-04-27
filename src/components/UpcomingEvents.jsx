@@ -2,19 +2,19 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
-import posterImg1 from "../assets/Upcoming-events-img/sukkur-chapter-2.png";
+import posterImg1 from "../assets/Upcoming-events-img/alumni-2025.jpeg";
 // import posterImg2 from "../assets/Upcoming-events-img/Clement-Visage-event.jpg";
-import posterImg3 from "../assets/Upcoming-events-img/admission-2025.jpeg";
+import posterImg3 from "../assets/Upcoming-events-img/admission-suvapa-2025.jpeg";
 
 const UpcomingEvents = () => {
   const [events, setEvents] = useState([
     {
       id: 1,
-      title: "Sukkur Chapter 2",
+      title: "Arts Alumni Festival",
       date: "2025-05-15",
       description: "Join us for the second chapter of our cultural event in Sukkur.",
       image: posterImg1,
-      registerLink: "/register/sukkur-chapter-2",
+      registerLink: "https://acpkhi.com/alumni",
     },
     // {
     //   id: 2,
@@ -26,7 +26,7 @@ const UpcomingEvents = () => {
     // },
     {
       id: 3,
-      title: "Admission Open 2025-26",
+      title: "Sovapa Admission Open",
       date: "2025-07-20",
       description: "Learn from experts in our series of art workshops.",
       image: posterImg3,
