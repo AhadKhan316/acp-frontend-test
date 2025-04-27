@@ -54,7 +54,7 @@ const VenuesPage = () => {
       <div className="mx-4">
         {/* Slider Section using SectionWithSwiper */}
         <SectionWithSwiper
-          title="Our Venues"
+          title="Our Facilities"
           description="The Arts Council of Pakistan Karachi is a hub of cultural and artistic activities, offering a range of venues for various events. From grand auditoriums to intimate studios, our spaces are designed to inspire creativity and foster collaboration."
           images={swiperImages}
           slidesPerView={1}
@@ -124,7 +124,7 @@ const VenuesPage = () => {
                       {item.description && (
                         <p className="text-sm mb-4 drop-shadow-md">{item.description}</p>
                       )}
-                      <Link to={`/venues/${item.slug}`}>
+                      <Link to={`/facilities/${item.slug}`}>
                         <motion.button
                           className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg shadow-sm transition-colors duration-300 flex items-center"
                           whileHover={{

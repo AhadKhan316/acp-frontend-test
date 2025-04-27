@@ -1,12 +1,141 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaMapMarkerAlt, FaPhone, FaFacebookF, FaTwitter, FaInstagram, FaLinkedin, FaCheckCircle } from "react-icons/fa";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { FaCheckCircle } from "react-icons/fa";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-// Placeholder images for the hero section
-const placeholderImage = "https://via.placeholder.com/400x300";
+// Custom Next Arrow for Slider
+const NextArrow = ({ onClick }) => (
+  <button
+    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/90 p-2 rounded-full hover:bg-black/70 transition-colors"
+    onClick={onClick}
+  >
+    <IoIosArrowForward className="text-white text-2xl" />
+  </button>
+);
 
-// Import venue images
+// Custom Prev Arrow for Slider
+const PrevArrow = ({ onClick }) => (
+  <button
+    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/90 p-2 rounded-full hover:bg-black/70 transition-colors"
+    onClick={onClick}
+  >
+    <IoIosArrowBack className="text-white text-2xl" />
+  </button>
+);
+
+const placeholderImages = {
+  audi1: [
+    "/src/assets/venues/audi1.png",
+    "https://via.placeholder.com/400x300?text=Audi1-Image2",
+    "https://via.placeholder.com/400x300?text=Audi1-Image3",
+    "https://via.placeholder.com/400x300?text=Audi1-Image4",
+    "https://via.placeholder.com/400x300?text=Audi1-Image5",
+  ],
+  audi2: [
+    "/src/assets/venues/audi2.png",
+    "https://via.placeholder.com/400x300?text=Audi2-Image2",
+    "https://via.placeholder.com/400x300?text=Audi2-Image3",
+    "https://via.placeholder.com/400x300?text=Audi2-Image4",
+    "https://via.placeholder.com/400x300?text=Audi2-Image5",
+  ],
+  studio1: [
+    "/src/assets/venues/studio1.png",
+    "https://via.placeholder.com/400x300?text=Studio1-Image2",
+    "https://via.placeholder.com/400x300?text=Studio1-Image3",
+    "https://via.placeholder.com/400x300?text=Studio1-Image4",
+    "https://via.placeholder.com/400x300?text=Studio1-Image5",
+  ],
+  studio2: [
+    "/src/assets/venues/studio2.png",
+    "https://via.placeholder.com/400x300?text=Studio2-Image2",
+    "https://via.placeholder.com/400x300?text=Studio2-Image3",
+    "https://via.placeholder.com/400x300?text=Studio2-Image4",
+    "https://via.placeholder.com/400x300?text=Studio2-Image5",
+  ],
+  "haseena-moin-hall": [
+    "/src/assets/venues/haseena-moin.png",
+    "https://via.placeholder.com/400x300?text=HaseenaMoin-Image2",
+    "https://via.placeholder.com/400x300?text=HaseenaMoin-Image3",
+    "https://via.placeholder.com/400x300?text=HaseenaMoin-Image4",
+    "https://via.placeholder.com/400x300?text=HaseenaMoin-Image5",
+  ],
+  "jaun-elia-lawn": [
+    "/src/assets/venues/jaun-elia.png",
+    "https://via.placeholder.com/400x300?text=JaunElia-Image2",
+    "https://via.placeholder.com/400x300?text=JaunElia-Image3",
+    "https://via.placeholder.com/400x300?text=JaunElia-Image4",
+    "https://via.placeholder.com/400x300?text=JaunElia-Image5",
+  ],
+  "za-bukhari-amphitheatre": [
+    "/src/assets/venues/ampitheatre.png",
+    "https://via.placeholder.com/400x300?text=ZABukhari-Image2",
+    "https://via.placeholder.com/400x300?text=ZABukhari-Image3",
+    "https://via.placeholder.com/400x300?text=ZABukhari-Image4",
+    "https://via.placeholder.com/400x300?text=ZABukhari-Image5",
+  ],
+  "cafe-d-art": [
+    "/src/assets/venues/cafe.png",
+    "https://via.placeholder.com/400x300?text=CafeDArt-Image2",
+    "https://via.placeholder.com/400x300?text=CafeDArt-Image3",
+    "https://via.placeholder.com/400x300?text=CafeDArt-Image4",
+    "https://via.placeholder.com/400x300?text=CafeDArt-Image5",
+  ],
+  "ahmed-pervez-art-gallery": [
+    "/src/assets/venues/art-gallery.png",
+    "https://via.placeholder.com/400x300?text=AhmedPervez-Image2",
+    "https://via.placeholder.com/400x300?text=AhmedPervez-Image3",
+    "https://via.placeholder.com/400x300?text=AhmedPervez-Image4",
+    "https://via.placeholder.com/400x300?text=AhmedPervez-Image5",
+  ],
+  "josh-malihabadi-library": [
+    "/src/assets/venues/library.png",
+    "https://via.placeholder.com/400x300?text=JoshMalihabadi-Image2",
+    "https://via.placeholder.com/400x300?text=JoshMalihabadi-Image3",
+    "https://via.placeholder.com/400x300?text=JoshMalihabadi-Image4",
+    "https://via.placeholder.com/400x300?text=JoshMalihabadi-Image5",
+  ],
+  "360-rooftop-lounge": [
+    "/src/assets/venues/rooftop.png",
+    "https://via.placeholder.com/400x300?text=360Rooftop-Image2",
+    "https://via.placeholder.com/400x300?text=360Rooftop-Image3",
+    "https://via.placeholder.com/400x300?text=360Rooftop-Image4",
+    "https://via.placeholder.com/400x300?text=360Rooftop-Image5",
+  ],
+  "lobby-area": [
+    "/src/assets/venues/lobby.png",
+    "https://via.placeholder.com/400x300?text=LobbyArea-Image2",
+    "https://via.placeholder.com/400x300?text=LobbyArea-Image3",
+    "https://via.placeholder.com/400x300?text=LobbyArea-Image4",
+    "https://via.placeholder.com/400x300?text=LobbyArea-Image5",
+  ],
+  "gulrang-cafe": [
+    "/src/assets/venues/gulrang.png",
+    "https://via.placeholder.com/400x300?text=GulrangCafe-Image2",
+    "https://via.placeholder.com/400x300?text=GulrangCafe-Image3",
+    "https://via.placeholder.com/400x300?text=GulrangCafe-Image4",
+    "https://via.placeholder.com/400x300?text=GulrangCafe-Image5",
+  ],
+  "audio-studio": [
+    "/src/assets/venues/audio-studio.png",
+    "https://via.placeholder.com/400x300?text=AudioStudio-Image2",
+    "https://via.placeholder.com/400x300?text=AudioStudio-Image3",
+    "https://via.placeholder.com/400x300?text=AudioStudio-Image4",
+    "https://via.placeholder.com/400x300?text=AudioStudio-Image5",
+  ],
+  "parking-area": [
+    "/src/assets/venues/parking.png",
+    "https://via.placeholder.com/400x300?text=ParkingArea-Image2",
+    "https://via.placeholder.com/400x300?text=ParkingArea-Image3",
+    "https://via.placeholder.com/400x300?text=ParkingArea-Image4",
+    "https://via.placeholder.com/400x300?text=ParkingArea-Image5",
+  ],
+};
+
+
 import venueImg1 from "/src/assets/venues/audi1.png";
 import venueImg2 from "/src/assets/venues/audi2.png";
 import venueImg3 from "/src/assets/venues/studio1.png";
@@ -30,7 +159,7 @@ const VenueSubPage = () => {
     audi1: {
       name: "Auditorium 1",
       mainImage: venueImg1,
-      heroImages: Array.from({ length: 3 }, (_, i) => placeholderImage),
+      heroImages: placeholderImages.audi1,
       facilities: [
         "50 sq.ft conference room",
         "High-speed Wi-Fi",
@@ -48,7 +177,7 @@ const VenueSubPage = () => {
     audi2: {
       name: "Auditorium 2",
       mainImage: venueImg2,
-      heroImages: Array.from({ length: 3 }, (_, i) => placeholderImage),
+      heroImages: placeholderImages.audi2,
       facilities: [
         "40 sq.ft conference room",
         "High-speed Wi-Fi",
@@ -66,7 +195,7 @@ const VenueSubPage = () => {
     studio1: {
       name: "Studio 1",
       mainImage: venueImg3,
-      heroImages: Array.from({ length: 3 }, (_, i) => placeholderImage),
+      heroImages: placeholderImages.studio1,
       facilities: [
         "Recording equipment",
         "Soundproof walls",
@@ -84,7 +213,7 @@ const VenueSubPage = () => {
     studio2: {
       name: "Studio 2",
       mainImage: venueImg4,
-      heroImages: Array.from({ length: 3 }, (_, i) => placeholderImage),
+      heroImages: placeholderImages.studio2,
       facilities: [
         "Recording equipment",
         "Soundproof walls",
@@ -102,7 +231,7 @@ const VenueSubPage = () => {
     "haseena-moin-hall": {
       name: "Haseena Moin Hall",
       mainImage: venueImg5,
-      heroImages: Array.from({ length: 3 }, (_, i) => placeholderImage),
+      heroImages: placeholderImages["haseena-moin-hall"],
       facilities: [
         "Stage setup",
         "Lighting grid",
@@ -120,7 +249,7 @@ const VenueSubPage = () => {
     "jaun-elia-lawn": {
       name: "Jaun Elia Lawn",
       mainImage: venueImg6,
-      heroImages: Array.from({ length: 3 }, (_, i) => placeholderImage),
+      heroImages: placeholderImages["jaun-elia-lawn"],
       facilities: [
         "Open-air seating",
         "Lighting setup",
@@ -138,7 +267,7 @@ const VenueSubPage = () => {
     "za-bukhari-amphitheatre": {
       name: "Z.A Bukhari Amphitheatre",
       mainImage: venueImg7,
-      heroImages: Array.from({ length: 3 }, (_, i) => placeholderImage),
+      heroImages: placeholderImages["za-bukhari-amphitheatre"],
       facilities: [
         "Tiered seating",
         "Lighting setup",
@@ -156,7 +285,7 @@ const VenueSubPage = () => {
     "cafe-d-art": {
       name: "Café D' Art",
       mainImage: venueImg8,
-      heroImages: Array.from({ length: 3 }, (_, i) => placeholderImage),
+      heroImages: placeholderImages["cafe-d-art"],
       facilities: [
         "Seating for 50",
         "Coffee bar",
@@ -174,7 +303,7 @@ const VenueSubPage = () => {
     "ahmed-pervez-art-gallery": {
       name: "Ahmed Pervez Art Gallery",
       mainImage: venueImg9,
-      heroImages: Array.from({ length: 3 }, (_, i) => placeholderImage),
+      heroImages: placeholderImages["ahmed-pervez-art-gallery"],
       facilities: [
         "Exhibition space",
         "Lighting grid",
@@ -192,7 +321,7 @@ const VenueSubPage = () => {
     "josh-malihabadi-library": {
       name: "Josh Malihabadi Library",
       mainImage: venueImg10,
-      heroImages: Array.from({ length: 3 }, (_, i) => placeholderImage),
+      heroImages: placeholderImages["josh-malihabadi-library"],
       facilities: [
         "Reading rooms",
         "Wi-Fi",
@@ -210,7 +339,7 @@ const VenueSubPage = () => {
     "360-rooftop-lounge": {
       name: "360° Rooftop Lounge",
       mainImage: venueImg11,
-      heroImages: Array.from({ length: 3 }, (_, i) => placeholderImage),
+      heroImages: placeholderImages["360-rooftop-lounge"],
       facilities: [
         "Panoramic views",
         "Seating for 100",
@@ -228,7 +357,7 @@ const VenueSubPage = () => {
     "lobby-area": {
       name: "Lobby Area",
       mainImage: venueImg12,
-      heroImages: Array.from({ length: 3 }, (_, i) => placeholderImage),
+      heroImages: placeholderImages["lobby-area"],
       facilities: [
         "Seating area",
         "Wi-Fi",
@@ -246,7 +375,7 @@ const VenueSubPage = () => {
     "gulrang-cafe": {
       name: "Gulrang Café",
       mainImage: venueImg13,
-      heroImages: Array.from({ length: 3 }, (_, i) => placeholderImage),
+      heroImages: placeholderImages["gulrang-cafe"],
       facilities: [
         "Seating for 40",
         "Coffee bar",
@@ -264,7 +393,7 @@ const VenueSubPage = () => {
     "audio-studio": {
       name: "Audio Studio",
       mainImage: venueImg14,
-      heroImages: Array.from({ length: 3 }, (_, i) => placeholderImage),
+      heroImages: placeholderImages["audio-studio"],
       facilities: [
         "Recording equipment",
         "Soundproof walls",
@@ -282,7 +411,7 @@ const VenueSubPage = () => {
     "parking-area": {
       name: "Parking Area",
       mainImage: venueImg15,
-      heroImages: Array.from({ length: 3 }, (_, i) => placeholderImage),
+      heroImages: placeholderImages["parking-area"],
       facilities: [
         "Space for 200 vehicles",
         "Security cameras",
@@ -301,6 +430,7 @@ const VenueSubPage = () => {
 
   const [currentVenue, setCurrentVenue] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("facilities");
 
   useEffect(() => {
     const loadData = () => {
@@ -318,14 +448,18 @@ const VenueSubPage = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    if (isSidebarOpen) {
-      setIsSidebarOpen(false); // Close sidebar on mobile after clicking
-    }
+  const sliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: true,
+    adaptiveHeight: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
 
   if (!currentVenue) {
@@ -337,298 +471,213 @@ const VenueSubPage = () => {
   }
 
   return (
-    <div className="bg-gray-50 text-gray-900 min-h-screen">
-      {/* Main Content */}
+    <div className="bg-white text-black">
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        {/* Hero Section */}
-        <section className="relative mb-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {currentVenue.heroImages.map((image, index) => (
-              <motion.div
-                key={index}
-                className="relative w-full aspect-[4/3] overflow-hidden rounded-md"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <img
-                  src={image}
-                  alt={`Venue ${index + 1}`}
-                  className="w-full h-full object-cover rounded-md"
-                  loading="lazy"
-                  style={{ backgroundColor: "#e5e7eb" }}
-                />
-              </motion.div>
-            ))}
-          </div>
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-black/60 to-red-600/40">
-            <motion.h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white text-center drop-shadow-lg tracking-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {currentVenue.name}
-            </motion.h1>
-          </div>
-        </section>
-
-        {/* Main Content with Sidebar */}
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Sidebar */}
-          <aside className="lg:w-1/4 bg-white rounded-lg shadow-md p-6 lg:sticky lg:top-24">
-            <h3 className="text-xl font-semibold text-red-600 mb-4">Explore</h3>
-            <ul className="space-y-3">
-              <li>
-                <button
-                  onClick={() => scrollToSection("images")}
-                  className="text-gray-700 hover:text-red-600 transition-colors"
-                >
-                  Images
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("facilities")}
-                  className="text-gray-700 hover:text-red-600 transition-colors"
-                >
-                  Facilities
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("details")}
-                  className="text-gray-700 hover:text-red-600 transition-colors"
-                >
-                  Details
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("description")}
-                  className="text-gray-700 hover:text-red-600 transition-colors"
-                >
-                  Description
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("booking")}
-                  className="text-gray-700 hover:text-red-600 transition-colors"
-                >
-                  Booking
-                </button>
-              </li>
-            </ul>
-          </aside>
-
-          {/* Main Content */}
-          <main className="lg:w-3/4">
-            {/* Images Section */}
-            <section id="images" className="mb-12">
-              <motion.div
-                className="relative w-full aspect-[16/9] overflow-hidden rounded-lg shadow-md"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                whileHover={{ scale: 1.02 }}
-                viewport={{ once: true }}
-              >
-                <img
-                  src={currentVenue.mainImage}
-                  alt={`${currentVenue.name} Main Image`}
-                  className="w-full h-full object-cover rounded-lg"
-                  loading="lazy"
-                  style={{ backgroundColor: "#e5e7eb" }}
-                />
-              </motion.div>
-            </section>
-
-            {/* Facilities Section */}
-            <section id="facilities" className="mb-12 bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-4 border-red-600 pl-4">
-                Facilities
-              </h2>
-              <ul className="space-y-3">
-                {currentVenue.facilities.map((facility, index) => (
-                  <motion.li
-                    key={index}
-                    className="flex items-center text-gray-700"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <FaCheckCircle className="text-red-600 mr-3" />
-                    {facility}
-                  </motion.li>
+        
+        <section className="mb-12">
+          <div className="flex flex-col lg:flex-row gap-8">
+            
+            <div className="lg:w-2/3">
+              <Slider {...sliderSettings}>
+                {currentVenue.heroImages.map((image, index) => (
+                  <div key={index} className="relative w-full aspect-[16/9] rounded-lg overflow-hidden">
+                    <img
+                      src={image}
+                      alt={`Venue Slide ${index + 1}`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      style={{ backgroundColor: "#e5e7eb" }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  </div>
                 ))}
-              </ul>
-            </section>
-
-            {/* Details Section */}
-            <section id="details" className="mb-12 bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-4 border-red-600 pl-4">
-                Details
-              </h2>
-              <div className="space-y-3">
-                {Object.entries(currentVenue.details).map(([key, value], index) => (
-                  <motion.div
-                    key={index}
-                    className="flex justify-between border-b border-gray-200 py-2"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <span className="font-semibold text-gray-900">{key}:</span>
-                    <span className="text-gray-700">{value}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </section>
-
-            {/* Description Section */}
-            <section id="description" className="mb-12 bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-4 border-red-600 pl-4">
-                Description
-              </h2>
+              </Slider>
+            </div>
+            {/* Description */}
+            <div className="lg:w-1/3 flex flex-col justify-center">
+              <motion.h2
+                className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                About the Venue
+              </motion.h2>
               <motion.p
                 className="text-gray-700 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
               >
                 {currentVenue.description}
               </motion.p>
-            </section>
+            </div>
+          </div>
+        </section>
 
-            {/* Booking Section */}
-            <section id="booking" className="mb-12 bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-4 border-red-600 pl-4">
-                Booking
-              </h2>
-              <div className="space-y-4">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  viewport={{ once: true }}
-                >
-                  <label className="block text-gray-900 font-semibold mb-2">Name</label>
-                  <input
-                    type="text"
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
-                    placeholder="Enter your name"
-                  />
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <label className="block text-gray-900 font-semibold mb-2">Email</label>
-                  <input
-                    type="email"
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
-                    placeholder="Enter your email"
-                  />
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  <label className="block text-gray-900 font-semibold mb-2">Phone Number</label>
-                  <input
-                    type="tel"
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
-                    placeholder="Enter your phone number"
-                  />
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  <label className="block text-gray-900 font-semibold mb-2">Select Venue</label>
-                  <select
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
-                    defaultValue={venueId}
+        {/* Tabbed Content */}
+        <section>
+          
+          <div className="mb-12 flex flex-col sm:flex-row gap-2 sm:gap-4">
+            {["facilities", "details", "booking"].map((tab) => (
+              <motion.button
+                key={tab}
+                className={`px-6 py-3 rounded-xl text-lg font-semibold capitalize transition-colors duration-300 ${activeTab === tab
+                  ? "bg-[#B90602] text-white shadow-md cursor-pointer"
+                  : "bg-[#B90602] text-white cursor-pointer hover:bg-black/80 hover:shadow-lg"
+                  }`}
+                onClick={() => setActiveTab(tab)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {tab}
+              </motion.button>
+            ))}
+          </div>
+
+          {/* Tab Content */}
+          <div className="bg-white rounded-lg shadow-md p-6">
+            {activeTab === "facilities" && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-4 border-red-600 pl-4">
+                  Facilities
+                </h2>
+                <ul className="space-y-3">
+                  {currentVenue.facilities.map((facility, index) => (
+                    <motion.li
+                      key={index}
+                      className="flex items-center text-gray-700"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <FaCheckCircle className="text-red-600 mr-3" />
+                      {facility}
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            )}
+
+            {activeTab === "details" && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-4 border-red-600 pl-4">
+                  Details
+                </h2>
+                <div className="space-y-3">
+                  {Object.entries(currentVenue.details).map(([key, value], index) => (
+                    <motion.div
+                      key={index}
+                      className="flex justify-between border-b border-gray-200 py-2"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <span className="font-semibold text-gray-900">{key}:</span>
+                      <span className="text-gray-700">{value}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+
+            {activeTab === "booking" && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-4 border-red-600 pl-4">
+                  Booking
+                </h2>
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-gray-900 font-semibold mb-2">Name</label>
+                    <input
+                      type="text"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+                      placeholder="Enter your name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-900 font-semibold mb-2">Email</label>
+                    <input
+                      type="email"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-900 font-semibold mb-2">Phone Number</label>
+                    <input
+                      type="tel"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-900 font-semibold mb-2">Select Venue</label>
+                    <select
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+                      defaultValue={venueId}
+                    >
+                      {Object.keys(venueData).map((key) => (
+                        <option key={key} value={key}>{venueData[key].name}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-gray-900 font-semibold mb-2">Date of Event</label>
+                    <input
+                      type="date"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-900 font-semibold mb-2">Start Time</label>
+                    <input
+                      type="time"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-900 font-semibold mb-2">End Time</label>
+                    <input
+                      type="time"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-900 font-semibold mb-2">Message</label>
+                    <textarea
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+                      rows="4"
+                      placeholder="Enter your message"
+                    ></textarea>
+                  </div>
+                  <motion.button
+                    className="w-full px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg shadow-md transition-colors duration-300"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 400 }}
                   >
-                    {Object.keys(venueData).map((key) => (
-                      <option key={key} value={key}>{venueData[key].name}</option>
-                    ))}
-                  </select>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  viewport={{ once: true }}
-                >
-                  <label className="block text-gray-900 font-semibold mb-2">Date of Event</label>
-                  <input
-                    type="date"
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
-                  />
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                  viewport={{ once: true }}
-                >
-                  <label className="block text-gray-900 font-semibold mb-2">Start Time</label>
-                  <input
-                    type="time"
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
-                  />
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <label className="block text-gray-900 font-semibold mb-2">End Time</label>
-                  <input
-                    type="time"
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
-                  />
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.7 }}
-                  viewport={{ once: true }}
-                >
-                  <label className="block text-gray-900 font-semibold mb-2">Message</label>
-                  <textarea
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
-                    rows="4"
-                    placeholder="Enter your message"
-                  ></textarea>
-                </motion.div>
-                <motion.button
-                  className="w-full px-6 py-3 bg-red-700 hover:bg-red-800 text-white font-semibold rounded-lg shadow-md transition-colors duration-300"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  Submit
-                </motion.button>
-              </div>
-            </section>
-          </main>
-        </div>
+                    Submit
+                  </motion.button>
+                </div>
+              </motion.div>
+            )}
+          </div>
+        </section>
       </div>
-
     </div>
   );
 };

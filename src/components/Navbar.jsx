@@ -133,6 +133,7 @@ const Navbar = () => {
                                             <NavLink to="/festival/ptf">Pakistan Theatre Festival</NavLink>
                                             <NavLink to="/festival/pyf">Pakistan Youth Festival</NavLink>
                                             <NavLink to="/festival/wc">Women Conference</NavLink>
+                                            <NavLink to="/festival/aaf">Arts Alumni Festival</NavLink>
                                         </div>
                                     )}
                                 </div>
@@ -142,7 +143,7 @@ const Navbar = () => {
 
                     <li><NavLink to="/academies">Academies</NavLink></li>
                     <li><NavLink to="/facilities">Facilities</NavLink></li>
-                    <li><NavLink to="/events">Events</NavLink></li>
+                    {/* <li><NavLink to="/events">Events</NavLink></li> */}
 
                     <li className="relative group">
                         <DropdownButton onClick={(e) => toggleSubMenu("resources", e)} isOpen={isSubMenuOpen["resources"]}>Resources</DropdownButton>
@@ -196,6 +197,7 @@ const Navbar = () => {
                                             <NavLink to="/festival/ptf">Pakistan Theatre Festival</NavLink>
                                             <NavLink to="/festival/pyf">Pakistan Youth Festival</NavLink>
                                             <NavLink to="/festival/wc">Women Conference</NavLink>
+                                            <NavLink to="/festival/aaf">Arts Alumni Festival</NavLink>
                                         </div>
                                     )}
                                 </div>
@@ -204,7 +206,7 @@ const Navbar = () => {
 
                         <li><NavLink to="/academies">Academies</NavLink></li>
                         <li><NavLink to="/facilities">Facilities</NavLink></li>
-                        <li><NavLink to="/events">Events</NavLink></li>
+                        {/* <li><NavLink to="/events">Events</NavLink></li> */}
                         <li className="relative group">
                             <DropdownButton onClick={(e) => toggleSubMenu("resources", e)} isOpen={isSubMenuOpen["resources"]}>Resources</DropdownButton>
                             {isSubMenuOpen["resources"] && (

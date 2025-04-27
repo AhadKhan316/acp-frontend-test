@@ -17,7 +17,7 @@ import ContactUs from './Pages/ContactUs';
 
 // Pages
 import AcademiesPage from './Pages/AcademyPage';
-import VenuesPage from './Pages/VenuePage';
+import VenuesPage from './Pages/Venue';
 import AboutUs from './Pages/AboutUs';
 import GoverningBody from './Pages/GoverningBody';
 import TeamMembers from './Pages/TeamMember';
@@ -48,6 +48,9 @@ import WomenConference from './Pages/WomenConference'
 // PTF Pages
 import PakistanTheatreFestival from './Pages/PakistanTheatreFestival';
 
+// AAF Pages
+// import ArtsAlumniFestival from './Pages/ArtsAlumniFestival';
+
 const App = () => {
   return (
     <Router>
@@ -73,7 +76,7 @@ const App = () => {
           {/* ACP Sub Pages */}
           <Route path="/upcomingEvents" element={<UpcomingEventsPage />}></Route>
           <Route path="/academies/:department" element={<AcademyCoursePage />}></Route>
-          <Route path="/venues/:venueId" element={<VenueSubPage />} />
+          <Route path="/facilities/:venueId" element={<VenueSubPage />} />
 
 
           <Route path="/academies" element={<AcademiesPage />} />
@@ -106,6 +109,9 @@ const App = () => {
 
         {/* PTF */}
         <Route path="/festival/ptf/*" element={<PakistanTheatreFestival />} />
+
+        {/* AAF */}
+        {/* <Route path="/festival/aaf/*" element={<ArtsAlumniFestival />} /> */}
 
       </Routes>
     </Router>
