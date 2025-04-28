@@ -2,7 +2,7 @@ import React from "react";
 import ExhibitionGrid from "../wcfReusableComponents/WcfLandingPageExhibitionCard";
 
 import exhbition1 from "/src/assets/wcf-assets/wcf-exhibition/wcf-exhibition1.jpg";
-import exhbition2 from "/src/assets/wcf-assets/wcf-exhibition/wcf-Exhibition2.jpg";
+import exhbition2 from "/src/assets/wcf-assets/wcf-exhibition/wcf-exhibition2.jpg";
 
 // Exhibition Data
 const exhibitions = [
