@@ -213,7 +213,7 @@ const AlumniPage = () => {
                 <img
                   src={segment.image}
                   alt={segment.title}
-                  className="w-full h-140 sm:h-120 lg:h-120 object-cover"
+                  className="w-full h-64 sm:h-72 lg:h-80 object-contain"
                 />
                 <div className="p-4">
                   <h3 className="text-lg sm:text-xl font-semibold text-gray-800 text-center">

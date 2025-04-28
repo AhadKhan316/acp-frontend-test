@@ -159,7 +159,7 @@ const Footer = () => {
                   </svg>
                 </span>
                 <div>
-                  <p className="font-bold text-xl sm:text-xl lg:text-xl text-white">UN No</p>
+                  <p className="font-bold text-xl sm:text-xl lg:text-xl text-white">UAN No</p>
                   <p className="text-gray-200 text-base sm:text-sm max-w-xs">021-111-227-544
                   </p>
                 </div>
