@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
-import SponsorLogo1 from '../assets/wcf-assets/sponsor1.png'
-import SponsorLogo2 from '../assets/wcf-assets/sponsor2.png'
-import SponsorLogo3 from '../assets/wcf-assets/sponsor3.png'
-import SponsorLogo4 from '../assets/wcf-assets/sponsor1.png'
-import SponsorLogo5 from '../assets/wcf-assets/sponsor3.png'
+import SponsorLogo1 from '../assets/wcf-assets/wcf-sponsors/sponsor1.png'
+import SponsorLogo2 from '../assets/wcf-assets/wcf-sponsors/sponsor2.png'
+import SponsorLogo3 from '../assets/wcf-assets/wcf-sponsors/sponsor3.png'
+import SponsorLogo4 from '../assets/wcf-assets/wcf-sponsors/sponsor1.png'
+import SponsorLogo5 from '../assets/wcf-assets/wcf-sponsors/sponsor3.png'
 
 const ACPSponsors = () => {
   const sponsors = [

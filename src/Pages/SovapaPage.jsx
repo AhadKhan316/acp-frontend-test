@@ -13,7 +13,7 @@ import departmentImg3 from "../assets/academies/textile-design.png";
 import sliderImg1 from "../assets/academies/acp-drone-2023.png";
 import sliderImg2 from "../assets/academies/music.png";
 
-const AcademiesPage = () => {
+const SovapaPage = () => {
   const academyData = [
     { id: 1, name: "Graphic Design", image: departmentImg1, route: "graphic-design" },
     { id: 2, name: "Dance", image: departmentImg2, route: "dance" },
@@ -136,4 +136,4 @@ const AcademiesPage = () => {
   );
 };
 
-export default AcademiesPage;
+export default SovapaPage;

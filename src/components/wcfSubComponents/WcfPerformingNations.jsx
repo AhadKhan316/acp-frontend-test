@@ -1,11 +1,8 @@
 import React from "react";
 import CardCarousel from "../wcfReusableComponents/WcfLandingPageCardCarousel";
 
-import PerformmingNation1 from '/src/assets/wcf-assets/Generation_25.jpg'
-import PerformmingNation2 from '/src/assets/venues/Audi1/3.jpg'
-// import PerformmingNation2 from '/src/assets/venues/Audi1/3.jpg'
-// import PerformmingNation2 from '/src/assets/venues/Audi1/3.jpg'
-// import PerformmingNation2 from '/src/assets/venues/Audi1/3.jpg'
+import PerformmingNation1 from '/src/assets/wcf-assets/wcf-Performing-Nations/Generation-25.jpg'
+import PerformmingNation2 from '/src/assets/wcf-assets/wcf-Performing-Nations/Congo.jpeg'
 
 // Card Data
 const cards = [

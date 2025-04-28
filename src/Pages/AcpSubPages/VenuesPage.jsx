@@ -30,7 +30,7 @@ const PrevArrow = ({ onClick }) => (
 const placeholderImages = {
   audi1: [
     "/src/assets/venues/audi1.png",
-    "https://via.placeholder.com/400x300?text=Audi1-Image2",
+    "/src/assets/venues/Audi1/audi1.1jpg",
     "https://via.placeholder.com/400x300?text=Audi1-Image3",
     "https://via.placeholder.com/400x300?text=Audi1-Image4",
     "https://via.placeholder.com/400x300?text=Audi1-Image5",
@@ -472,12 +472,12 @@ const VenueSubPage = () => {
 
   return (
     <div className="bg-white text-black">
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        
+
         <section className="mb-12">
           <div className="flex flex-col lg:flex-row gap-8">
-            
+
             <div className="lg:w-2/3">
               <Slider {...sliderSettings}>
                 {currentVenue.heroImages.map((image, index) => (
@@ -518,7 +518,7 @@ const VenueSubPage = () => {
 
         {/* Tabbed Content */}
         <section>
-          
+
           <div className="mb-12 flex flex-col sm:flex-row gap-2 sm:gap-4">
             {["facilities", "details", "booking"].map((tab) => (
               <motion.button

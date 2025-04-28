@@ -14,7 +14,7 @@ const UpcomingEvents = () => {
       // date: "2025-05-15",
       description: "Join us for the second chapter of our cultural event in Sukkur.",
       image: posterImg1,
-      registerLink: "https://acpkhi.com/alumni",
+      registerLink: "/alumni",
     },
     // {
     //   id: 2,

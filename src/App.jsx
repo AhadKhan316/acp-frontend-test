@@ -8,7 +8,7 @@ import UpcomingEvents from './components/UpcomingEvents';
 import About from './components/About';
 // import PresidentMessage from './components/PresidentMessage';
 import StayUpdated from './components/StayUpdated';
-import Academy from './components/Academy';
+import Sovapa from './components/Academy';
 import CommunityFeedback from './components/CommunityFeedback';
 import Production from './components/Production';
 // import OurSocial from './components/OurSocial';
@@ -16,7 +16,7 @@ import OurSponsors from './components/Sponsors';
 import ContactUs from './Pages/ContactUs';
 
 // Pages
-import AcademiesPage from './Pages/AcademyPage';
+import SovapaPage from './Pages/SovapaPage';
 import VenuesPage from './Pages/Venue';
 import AboutUs from './Pages/AboutUs';
 import GoverningBody from './Pages/GoverningBody';
@@ -27,8 +27,9 @@ import Tenders from './Pages/Tenders';
 
 // ACP Sub Pages
 import UpcomingEventsPage from './Pages/AcpSubPages/UpcomingEventsPage';
-import AcademyCoursePage from './Pages/AcpSubPages/AcademyCoursePage';
+import SovapaCoursePage from './Pages/AcpSubPages/SovapaCoursePage';
 import VenueSubPage from './Pages/AcpSubPages/VenuesPage';
+
 
 // WCF Page
 import WorldCultureFestival from './Pages/WorldCulturalFestival';
@@ -49,7 +50,7 @@ import WomenConference from './Pages/WomenConference'
 import PakistanTheatreFestival from './Pages/PakistanTheatreFestival';
 
 // AAF Pages
-// import ArtsAlumniFestival from './Pages/ArtsAlumniFestival';
+import ArtsAlumniFestival from './Pages/AlumniFestival';
 
 const App = () => {
   return (
@@ -63,7 +64,7 @@ const App = () => {
               <About />
               <UpcomingEvents />
               {/* <PresidentMessage /> */}
-              <Academy />
+              <Sovapa />
 
               <Production />
               {/* <OurSocial /> */}
@@ -75,11 +76,15 @@ const App = () => {
 
           {/* ACP Sub Pages */}
           <Route path="/upcomingEvents" element={<UpcomingEventsPage />}></Route>
-          <Route path="/academies/:department" element={<AcademyCoursePage />}></Route>
+          <Route path="/sovapa/:department" element={<SovapaCoursePage />}></Route>
           <Route path="/facilities/:venueId" element={<VenueSubPage />} />
 
+          {/* Arts Alumni Festival Route */}
+          <Route path="/alumni" element={<ArtsAlumniFestival />} />
 
-          <Route path="/academies" element={<AcademiesPage />} />
+          {/* Contact Us */}
+
+          <Route path="/sovapa" element={<SovapaPage />} />
           <Route path="/facilities" element={<VenuesPage />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/governingBody" element={<GoverningBody />} />

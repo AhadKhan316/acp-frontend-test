@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
-import SponsorLogo1 from '/src/assets/wcf-assets/sponsor1.png'
-import SponsorLogo2 from '/src//assets/wcf-assets/sponsor2.png'
-import SponsorLogo3 from '/src/assets/wcf-assets/sponsor3.png'
-import SponsorLogo4 from '/src/assets/wcf-assets/sponsor1.png'
-import SponsorLogo5 from '/src/assets/wcf-assets/sponsor3.png'
+import SponsorLogo1 from '/src/assets/wcf-assets/wcf-sponsors/sponsor1.png'
+import SponsorLogo2 from '/src/assets/wcf-assets/wcf-sponsors/sponsor2.png'
+import SponsorLogo3 from '/src/assets/wcf-assets/wcf-sponsors/sponsor3.png'
+import SponsorLogo4 from '/src/assets/wcf-assets/wcf-sponsors/sponsor1.png'
+import SponsorLogo5 from '/src/assets/wcf-assets/wcf-sponsors/sponsor3.png'
 
 const PyfSponsors = () => {
   const sponsors = [

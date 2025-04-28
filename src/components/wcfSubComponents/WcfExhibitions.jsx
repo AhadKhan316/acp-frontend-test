@@ -1,8 +1,8 @@
 import React from "react";
 import ExhibitionGrid from "../wcfReusableComponents/WcfLandingPageExhibitionCard";
 
-import exhbition1 from "/src/assets/wcf-assets/Wcf-Exhibition.jpeg";
-import exhbition2 from "/src/assets/venues/Audi1/1.jpg";
+import exhbition1 from "/src/assets/wcf-assets/wcf-exhibition/wcf-exhibition1.jpg";
+import exhbition2 from "/src/assets/wcf-assets/wcf-exhibition/Wcf-Exhibition2.jpg";
 
 // Exhibition Data
 const exhibitions = [
@@ -39,7 +39,7 @@ function WcfExhibitions() {
       title="Exhibitions"
       gridCols={{ base: 1, sm: 2, lg: 3 }}
       imageAspectRatio="1/1"
-      maxImageHeight="400px"
+      maxImageHeight="570px"
       useHexClip={false}
     />
   );
