@@ -118,7 +118,7 @@ const Navbar = () => {
                     </li>
 
                     <li className="relative group">
-                        <DropdownButton onClick={(e) => toggleSubMenu("production", e)} isOpen={isSubMenuOpen["production"]}>Production</DropdownButton>
+                        <DropdownButton onClick={(e) => toggleSubMenu("production", e)} isOpen={isSubMenuOpen["production"]}>Initiative</DropdownButton>
                         {isSubMenuOpen["production"] && (
                             <div className="absolute top-full left-0 mt-2 w-64 bg-black rounded-md shadow-lg z-40">
                                 <div className="relative">
@@ -182,7 +182,7 @@ const Navbar = () => {
 
                         <li className="relative">
                             <DropdownButton onClick={(e) => toggleSubMenu("production", e)} isOpen={isSubMenuOpen["production"]}>
-                                Production
+                                Initiative
                             </DropdownButton>
                             {isSubMenuOpen["production"] && (
                                 <div className="ml-4">
@@ -227,23 +227,21 @@ const Navbar = () => {
                     <div className="space-y-4">
                         {[
                             {
-                                href: "#", // Replace with actual WC Instagram URL
+                                href: "https://www.instagram.com/acpkhiofficial",
                                 icon: <FaInstagram className="h-6 w-6" />,
                                 alt: "Instagram",
+
                             },
                             {
-                                href: "#", // Replace with actual WC Facebook URL
-                                icon: <FaFacebookF className="h-6 w-6" />,
+                                href: "https://www.facebook.com/ACPKHI/", icon: <FaFacebookF className="h-6 w-6" />,
                                 alt: "Facebook",
                             },
                             {
-                                href: "#", // Replace with actual WC TikTok URL
-                                icon: <FaTiktok className="h-6 w-6" />,
+                                href: "https://www.tiktok.com/@acpkhi", icon: <FaTiktok className="h-6 w-6" />,
                                 alt: "TikTok",
                             },
                             {
-                                href: "#", // Replace with actual WC YouTube URL
-                                icon: <FaYoutube className="h-6 w-6" />,
+                                href: "https://youtube.com/@acpkhi", icon: <FaYoutube className="h-6 w-6" />,
                                 alt: "YouTube",
                             },
                         ].map((item) => (
@@ -252,6 +250,8 @@ const Navbar = () => {
                                 href={item.href}
                                 className="block text-white hover:text-red-700 transition duration-300"
                                 aria-label={item.alt}
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 {item.icon}
                             </a>

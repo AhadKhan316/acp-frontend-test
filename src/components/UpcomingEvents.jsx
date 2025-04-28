@@ -11,7 +11,7 @@ const UpcomingEvents = () => {
     {
       id: 1,
       title: "Arts Alumni Festival",
-      // date: "2025-05-15",
+      date: "2025-05-09",
       description: "Join us for the second chapter of our cultural event in Sukkur.",
       image: posterImg1,
       registerLink: "/alumni",
@@ -27,7 +27,7 @@ const UpcomingEvents = () => {
     {
       id: 3,
       title: "Sovapa Admission Open",
-      // date: "2025-07-20",
+      date: "2025-04-13",
       description: "Learn from experts in our series of art workshops.",
       image: posterImg3,
       registerLink: "https://acpkhi.com/admissions",
@@ -133,11 +133,13 @@ const UpcomingEvents = () => {
                   <div className="flex flex-col">
                     {/* Event Image */}
                     <div className="w-full mb-4">
-                      <img
-                        src={event.image}
-                        alt={event.title}
-                        className="w-full h-auto object-contain rounded-lg"
-                      />
+                      <Link to={event.registerLink}>
+                        <img
+                          src={event.image}
+                          alt={event.title}
+                          className="w-full h-auto object-contain rounded-lg"
+                        />
+                      </Link>
                     </div>
                     {/* Event Details */}
                     <div className="text-center">

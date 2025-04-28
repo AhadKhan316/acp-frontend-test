@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Academies = () => {
   // Animation variants
@@ -153,9 +154,11 @@ const Academies = () => {
                 className="mt-8"
                 variants={itemVariants}
               >
-                <button className="px-8 py-3 bg-red-700 hover:bg-red-800 text-white font-semibold rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  Discover Our Academies
-                </button>
+                <Link to="/sovapa">
+                  <button className="px-8 py-3 bg-red-700 hover:bg-red-800 text-white font-semibold rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                    Discover Our Academies
+                  </button>
+                </Link>
               </motion.div>
             </motion.div>
           </div>
