@@ -103,7 +103,7 @@ const SovapaPage = () => {
                       {item.description && (
                         <p className="text-sm mb-4 drop-shadow-md">{item.description}</p>
                       )}
-                      <Link to={`/academies/${item.route}`}>
+                      <Link to={`/sovapa/${item.route}`}>
                         <motion.button
                           className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg shadow-sm transition-colors duration-300 flex items-center"
                           whileHover={{

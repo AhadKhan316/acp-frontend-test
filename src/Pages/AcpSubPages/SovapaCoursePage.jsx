@@ -387,12 +387,12 @@ const CoursePage = () => {
             {/* Description */}
             <div className="lg:w-1/3 flex flex-col justify-center">
               <motion.h2
-                className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+                className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                About the Academy
+                About {currentCourse.name}
               </motion.h2>
               <motion.p
                 className="text-gray-700 leading-relaxed"

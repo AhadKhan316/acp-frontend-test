@@ -1,220 +1,229 @@
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
-import SponsorLogo1 from '../assets/wcf-assets/wcf-sponsors/sponsor1.png';
-import SponsorLogo2 from '../assets/wcf-assets/wcf-sponsors/sponsor2.png';
-import SponsorLogo3 from '../assets/wcf-assets/wcf-sponsors/sponsor3.png';
-import SponsorLogo4 from '../assets/wcf-assets/wcf-sponsors/sponsor1.png';
-import SponsorLogo5 from '../assets/wcf-assets/wcf-sponsors/sponsor3.png';
-import SponsorLogo6 from '../assets/wcf-assets/wcf-sponsors/sponsor1.png';
-import SponsorLogo7 from '../assets/wcf-assets/wcf-sponsors/sponsor2.png';
-import SponsorLogo8 from '../assets/wcf-assets/wcf-sponsors/sponsor3.png';
-import SponsorLogo9 from '../assets/wcf-assets/wcf-sponsors/sponsor1.png';
-import SponsorLogo10 from '../assets/wcf-assets/wcf-sponsors/sponsor2.png';
-import SponsorLogo11 from '../assets/wcf-assets/wcf-sponsors/sponsor3.png';
-import SponsorLogo12 from '../assets/wcf-assets/wcf-sponsors/sponsor1.png';
-import SponsorLogo13 from '../assets/wcf-assets/wcf-sponsors/sponsor2.png';
-import SponsorLogo14 from '../assets/wcf-assets/wcf-sponsors/sponsor3.png';
-import SponsorLogo15 from '../assets/wcf-assets/wcf-sponsors/sponsor1.png';
-import SponsorLogo16 from '../assets/wcf-assets/wcf-sponsors/sponsor2.png';
-import SponsorLogo17 from '../assets/wcf-assets/wcf-sponsors/sponsor3.png';
-import SponsorLogo18 from '../assets/wcf-assets/wcf-sponsors/sponsor1.png';
-import SponsorLogo19 from '../assets/wcf-assets/wcf-sponsors/sponsor2.png';
-import SponsorLogo20 from '../assets/wcf-assets/wcf-sponsors/sponsor3.png';
-import SponsorLogo21 from '../assets/wcf-assets/wcf-sponsors/sponsor1.png';
-import SponsorLogo22 from '../assets/wcf-assets/wcf-sponsors/sponsor2.png';
-import SponsorLogo23 from '../assets/wcf-assets/wcf-sponsors/sponsor3.png';
+// Import your sponsor logos - replace these with your actual imports
+import MainSponsor1 from "../assets/wcf-assets/wcf-sponsors/sponsor1.png";
+import MainSponsor2 from "../assets/wcf-assets/wcf-sponsors/sponsor1.png";
+import MainSponsor3 from "../assets/wcf-assets/wcf-sponsors/sponsor2.png";
+import MainSponsor4 from "../assets/wcf-assets/wcf-sponsors/sponsor1.png";
+import NormalSponsor1 from "../assets/wcf-assets/wcf-sponsors/sponsor3.png";
+import NormalSponsor2 from "../assets/wcf-assets/wcf-sponsors/sponsor1.png";
+import NormalSponsor3 from "../assets/wcf-assets/wcf-sponsors/sponsor3.png";
+import NormalSponsor4 from "../assets/wcf-assets/wcf-sponsors/sponsor1.png";
+import NormalSponsor5 from "../assets/wcf-assets/wcf-sponsors/sponsor2.png";
+import BasicSponsor1 from "../assets/wcf-assets/wcf-sponsors/sponsor1.png";
+import BasicSponsor2 from "../assets/wcf-assets/wcf-sponsors/sponsor3.png";
+import BasicSponsor3 from "../assets/wcf-assets/wcf-sponsors/sponsor2.png";
+import BasicSponsor4 from "../assets/wcf-assets/wcf-sponsors/sponsor3.png";
+import BasicSponsor5 from "../assets/wcf-assets/wcf-sponsors/sponsor1.png";
+import BasicSponsor6 from "../assets/wcf-assets/wcf-sponsors/sponsor2.png";
 
-const ACPSponsors = () => {
-  const topSponsors = [
-    { id: 1, name: 'TopSponsor1', logo: SponsorLogo1, size: 'large', position: { top: '5%', left: '5%' } },
-    { id: 2, name: 'TopSponsor2', logo: SponsorLogo2, size: 'large', position: { top: '5%', left: '25%' } },
-    { id: 3, name: 'TopSponsor3', logo: SponsorLogo3, size: 'large', position: { top: '5%', left: '45%' } },
-    { id: 4, name: 'TopSponsor4', logo: SponsorLogo4, size: 'large', position: { top: '5%', right: '25%' } },
-    { id: 5, name: 'TopSponsor5', logo: SponsorLogo5, size: 'large', position: { top: '5%', right: '5%' } },
+const SponsorsSection = () => {
+  const mainSponsors = [
+    [
+      { id: 1, name: "Premium Partner", logo: MainSponsor1 },
+      { id: 2, name: "Gold Sponsor", logo: MainSponsor2 },
+      { id: 3, name: "Silver Sponsor", logo: MainSponsor3 },
+      { id: 4, name: "Technology Partner", logo: MainSponsor4 }
+    ],
+    [
+      { id: 5, name: "Partner A", logo: NormalSponsor1 },
+      { id: 6, name: "Partner B", logo: NormalSponsor2 },
+      { id: 7, name: "Partner C", logo: NormalSponsor3 }
+    ],
+    [
+      { id: 8, name: "Partner X", logo: NormalSponsor4 },
+      { id: 9, name: "Partner Y", logo: NormalSponsor5 }
+    ],
+    [
+      { id: 10, name: "Primary", logo: BasicSponsor1 }
+    ]
   ];
 
   const normalSponsors = [
-    { id: 6, name: 'NormalSponsor1', logo: SponsorLogo6, size: 'medium', position: { top: '30%', left: '5%' } },
-    { id: 7, name: 'NormalSponsor2', logo: SponsorLogo7, size: 'medium', position: { top: '30%', left: '20%' } },
-    { id: 8, name: 'NormalSponsor3', logo: SponsorLogo8, size: 'medium', position: { top: '30%', left: '35%' } },
-    { id: 9, name: 'NormalSponsor4', logo: SponsorLogo9, size: 'medium', position: { top: '30%', left: '50%' } },
-    { id: 10, name: 'NormalSponsor5', logo: SponsorLogo10, size: 'medium', position: { top: '30%', right: '35%' } },
-    { id: 11, name: 'NormalSponsor6', logo: SponsorLogo11, size: 'medium', position: { top: '30%', right: '20%' } },
-    { id: 12, name: 'NormalSponsor7', logo: SponsorLogo12, size: 'medium', position: { top: '40%', left: '15%' } },
-    { id: 13, name: 'NormalSponsor8', logo: SponsorLogo13, size: 'medium', position: { top: '40%', right: '15%' } },
+    [
+      { id: 11, name: "Supporter 1", logo: BasicSponsor1 },
+      { id: 12, name: "Supporter 2", logo: BasicSponsor2 },
+      { id: 13, name: "Supporter 3", logo: BasicSponsor3 },
+      { id: 14, name: "Supporter 4", logo: BasicSponsor4 }
+    ],
+    [
+      { id: 15, name: "Supporter A", logo: BasicSponsor5 },
+      { id: 16, name: "Supporter B", logo: BasicSponsor6 },
+      { id: 17, name: "Supporter C", logo: BasicSponsor1 }
+    ],
+    [
+      { id: 18, name: "Supporter X", logo: BasicSponsor2 },
+      { id: 19, name: "Supporter Y", logo: BasicSponsor3 }
+    ],
+    [
+      { id: 20, name: "Basic", logo: BasicSponsor4 }
+    ]
   ];
 
-  const basicSponsors = [
-    { id: 14, name: 'BasicSponsor1', logo: SponsorLogo14, size: 'small', position: { top: '55%', left: '5%' } },
-    { id: 15, name: 'BasicSponsor2', logo: SponsorLogo15, size: 'small', position: { top: '55%', left: '15%' } },
-    { id: 16, name: 'BasicSponsor3', logo: SponsorLogo16, size: 'small', position: { top: '55%', left: '25%' } },
-    { id: 17, name: 'BasicSponsor4', logo: SponsorLogo17, size: 'small', position: { top: '55%', left: '35%' } },
-    { id: 18, name: 'BasicSponsor5', logo: SponsorLogo18, size: 'small', position: { top: '55%', left: '45%' } },
-    { id: 19, name: 'BasicSponsor6', logo: SponsorLogo19, size: 'small', position: { top: '55%', right: '35%' } },
-    { id: 20, name: 'BasicSponsor7', logo: SponsorLogo20, size: 'small', position: { top: '55%', right: '25%' } },
-    { id: 21, name: 'BasicSponsor8', logo: SponsorLogo21, size: 'small', position: { top: '55%', right: '15%' } },
-    { id: 22, name: 'BasicSponsor9', logo: SponsorLogo22, size: 'small', position: { top: '55%', right: '5%' } },
-    { id: 23, name: 'BasicSponsor10', logo: SponsorLogo23, size: 'small', position: { top: '65%', left: '40%' } },
-  ];
-
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Responsive layout adjustment
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: {
+        staggerChildren: 0.1,
+      },
     },
   };
 
-  const logoVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: (i) => ({
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
       opacity: 1,
-      scale: 1,
-      transition: { duration: 0.6, delay: i * 0.2, ease: "easeOut" },
-    }),
+      y: 0,
+      transition: {
+        duration: 0.6,
+      },
+    },
     hover: {
-      scale: 1.1,
-      filter: "brightness(1.2) grayscale(0%)",
+      scale: 1.05,
       transition: { duration: 0.3 },
     },
   };
 
+  const getGridCols = (length) => {
+    if (length === 4) return "md:grid-cols-4";
+    if (length === 3) return "md:grid-cols-3";
+    if (length === 2) return "md:grid-cols-2";
+    return "md:grid-cols-1";
+  };
+
   return (
-    <motion.section
-      className="py-6 sm:py-8 bg-white text-black"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={sectionVariants}
-    >
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <h2 className="text-2xl sm:text-4xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 text-gold-400 uppercase tracking-wider">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="mx-4">
+        <motion.h2
+          className="text-3xl sm:text-4xl font-bold text-center mb-4 text-gray-800"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           Our Sponsors
-        </h2>
+        </motion.h2>
 
-        <div className="relative bg-white rounded-lg">
-          <div className={`relative ${isMobile ? 'space-y-8' : 'h-[130vh]'}`}>
-            {/* Top Sponsors */}
-            <div className={isMobile ? 'flex flex-col items-center space-y-4' : ''}>
-              {topSponsors.map((sponsor, index) => (
-                <motion.div
-                  key={sponsor.id}
-                  className={`${isMobile ? 'w-full max-w-[200px]' : 'absolute'
-                    } flex items-center justify-center`}
-                  style={
-                    isMobile
-                      ? {}
-                      : {
-                        top: sponsor.position.top,
-                        left: sponsor.position.left,
-                        right: sponsor.position.right,
-                        bottom: sponsor.position.bottom,
-                      }
-                  }
-                  custom={index}
-                  variants={logoVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  whileHover="hover"
-                >
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    className={`object-contain w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 opacity-80 transition-opacity duration-300`}
-                  />
-                </motion.div>
-              ))}
-            </div>
+        {/* Top Sponsors */}
+        <motion.div
+          className="mx-auto mb-12"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        />
 
-            {/* Normal Sponsors */}
-            <div className={isMobile ? 'flex flex-col items-center space-y-4 mt-8' : ''}>
-              {normalSponsors.map((sponsor, index) => (
-                <motion.div
-                  key={sponsor.id}
-                  className={`${isMobile ? 'w-full max-w-[150px]' : 'absolute'
-                    } flex items-center justify-center`}
-                  style={
-                    isMobile
-                      ? {}
-                      : {
-                        top: sponsor.position.top,
-                        left: sponsor.position.left,
-                        right: sponsor.position.right,
-                        bottom: sponsor.position.bottom,
-                      }
-                  }
-                  custom={index + topSponsors.length}
-                  variants={logoVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  whileHover="hover"
-                >
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    className={`object-contain w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 opacity-80 hover:opacity-100 transition-opacity duration-300`}
-                  />
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Basic Sponsors */}
-            <div className={isMobile ? 'flex flex-col items-center space-y-4 mt-8' : ''}>
-              {basicSponsors.map((sponsor, index) => (
-                <motion.div
-                  key={sponsor.id}
-                  className={`${isMobile ? 'w-full max-w-[100px]' : 'absolute'
-                    } flex items-center justify-center`}
-                  style={
-                    isMobile
-                      ? {}
-                      : {
-                        top: sponsor.position.top,
-                        left: sponsor.position.left,
-                        right: sponsor.position.right,
-                        bottom: sponsor.position.bottom,
-                      }
-                  }
-                  custom={index + topSponsors.length + normalSponsors.length}
-                  variants={logoVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  whileHover="hover"
-                >
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    className={`object-contain w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 opacity-80 hover:opacity-100 transition-opacity duration-300`}
-                  />
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Subtle crowd silhouette at the bottom */}
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/50 to-transparent"></div>
+        <motion.div
+          className="mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={containerVariants}
+        >
+          {/* <h3 className="text-xl font-semibold text-center mb-8 text-gray-700">Main Sponsors</h3> */}
+          <div className="space-y-8">
+            {mainSponsors.map((row, rowIndex) => (
+              <div
+                key={`main-row-${rowIndex}`}
+                className={`grid grid-cols-1 ${getGridCols(row.length)} gap-6 justify-center`}
+              >
+                {row.map((sponsor, index) => (
+                  <motion.div
+                    key={sponsor.id}
+                    className=" flex items-center justify-center"
+                    variants={itemVariants}
+                    whileHover="hover"
+                    custom={index}
+                  >
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="w-full h-auto max-h-35 object-contain"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            ))}
           </div>
-        </div>
+        </motion.div>
+
+
+
+        {/* Mid Sponsors*/}
+        <motion.div
+          className="mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={containerVariants}
+        >
+          {/* <h3 className="text-xl font-semibold text-center mb-8 text-gray-700">Partners</h3> */}
+          <div className="space-y-8">
+            {normalSponsors.map((row, rowIndex) => (
+              <div
+                key={`normal-row-${rowIndex}`}
+                className={`grid grid-cols-1 ${getGridCols(row.length)} gap-6 justify-center`}
+              >
+                {row.map((sponsor, index) => (
+                  <motion.div
+                    key={sponsor.id}
+                    className="p-4 flex items-center justify-center"
+                    variants={itemVariants}
+                    whileHover="hover"
+                    custom={index}
+                  >
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="w-full h-auto max-h-25 object-contain"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+
+        {/* Last Sponsors */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={containerVariants}
+        >
+          {/* <h3 className="text-xl font-semibold text-center mb-8 text-gray-700">Supporters</h3> */}
+          <div className="space-y-8">
+            {normalSponsors.map((row, rowIndex) => (
+              <div
+                key={`basic-row-${rowIndex}`}
+                className={`grid grid-cols-1 ${getGridCols(row.length)} gap-4 justify-center`}
+              >
+                {row.map((sponsor, index) => (
+                  <motion.div
+                    key={sponsor.id}
+                    className="p-3 flex items-center justify-center"
+                    variants={itemVariants}
+                    whileHover="hover"
+                    custom={index}
+                  >
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="w-full h-auto max-h-15 object-contain"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
-export default ACPSponsors;
+export default SponsorsSection;

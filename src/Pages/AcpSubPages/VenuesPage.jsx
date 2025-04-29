@@ -27,41 +27,84 @@ const PrevArrow = ({ onClick }) => (
   </button>
 );
 
+// Auditorium 1
+import AudiOne1 from "/src/assets/venues/Audi1/audi1.1.jpg";
+import AudiOne2 from "/src/assets/venues/Audi1/audi1.2.jpg";
+import AudiOne3 from "/src/assets/venues/Audi1/audi1.3.jpg";
+import AudiOne4 from "/src/assets/venues/Audi1/audi1.4.jpg";
+import AudiOne5 from "/src/assets/venues/Audi1/audi1.5.jpg";
+
+// Auditorium 2
+import AudiTwo1 from "/src/assets/venues/Audi2/audi2.1.jpg";
+import AudiTwo2 from "/src/assets/venues/Audi2/audi2.2.jpg";
+import AudiTwo3 from "/src/assets/venues/Audi2/audi2.3.jpg";
+import AudiTwo4 from "/src/assets/venues/Audi2/audi2.4.jpg";
+import AudiTwo5 from "/src/assets/venues/Audi2/audi2.5.jpg";
+
+// Studio 1
+import StudioOne1 from "/src/assets/venues/Studio1/studio1.1.jpg";
+import StudioOne2 from "/src/assets/venues/Studio1/studio1.2.jpg";
+import StudioOne3 from "/src/assets/venues/Studio1/studio1.3.jpg";
+import StudioOne4 from "/src/assets/venues/Studio1/studio1.4.jpg";
+import StudioOne5 from "/src/assets/venues/Studio1/studio1.5.jpg";
+import StudioOne6 from "/src/assets/venues/Studio1/studio1.6.jpg";
+
+// Studio 2
+import StudioTwo1 from "/src/assets/venues/Studio2/studio2.1.jpg";
+import StudioTwo2 from "/src/assets/venues/Studio2/studio2.2.jpg";
+import StudioTwo3 from "/src/assets/venues/Studio2/studio2.3.jpg";
+import StudioTwo4 from "/src/assets/venues/Studio2/studio2.4.jpg";
+import StudioTwo5 from "/src/assets/venues/Studio2/studio2.5.jpg";
+import StudioTwo6 from "/src/assets/venues/Studio2/studio2.6.jpg";
+
+// Haseena Moin Hall
+import HaseenaMoin1 from "/src/assets/venues/HaseenaMoinHall/haseenaMoinHall1.jpg";
+import HaseenaMoin2 from "/src/assets/venues/HaseenaMoinHall/haseenaMoinHall2.jpg";
+import HaseenaMoin3 from "/src/assets/venues/HaseenaMoinHall/haseenaMoinHall3.jpg";
+import HaseenaMoin4 from "/src/assets/venues/HaseenaMoinHall/haseenaMoinHall4.jpg";
+import HaseenaMoin5 from "/src/assets/venues/HaseenaMoinHall/haseenaMoinHall5.jpg";
+import HaseenaMoin6 from "/src/assets/venues/HaseenaMoinHall/haseenaMoinHall6.jpg";
+
+
+
 const placeholderImages = {
   audi1: [
-    "/src/assets/venues/audi1.png",
-    "/src/assets/venues/Audi1/audi1.1jpg",
-    "https://via.placeholder.com/400x300?text=Audi1-Image3",
-    "https://via.placeholder.com/400x300?text=Audi1-Image4",
-    "https://via.placeholder.com/400x300?text=Audi1-Image5",
+    AudiOne1,
+    AudiOne2,
+    AudiOne3,
+    AudiOne4,
+    AudiOne5,
   ],
   audi2: [
-    "/src/assets/venues/audi2.png",
-    "https://via.placeholder.com/400x300?text=Audi2-Image2",
-    "https://via.placeholder.com/400x300?text=Audi2-Image3",
-    "https://via.placeholder.com/400x300?text=Audi2-Image4",
-    "https://via.placeholder.com/400x300?text=Audi2-Image5",
+    AudiTwo1,
+    AudiTwo2,
+    AudiTwo3,
+    AudiTwo4,
+    AudiTwo5,
   ],
   studio1: [
-    "/src/assets/venues/studio1.png",
-    "https://via.placeholder.com/400x300?text=Studio1-Image2",
-    "https://via.placeholder.com/400x300?text=Studio1-Image3",
-    "https://via.placeholder.com/400x300?text=Studio1-Image4",
-    "https://via.placeholder.com/400x300?text=Studio1-Image5",
+    StudioOne1,
+    StudioOne2,
+    StudioOne3,
+    StudioOne4,
+    StudioOne5,
+    StudioOne6,
   ],
   studio2: [
-    "/src/assets/venues/studio2.png",
-    "https://via.placeholder.com/400x300?text=Studio2-Image2",
-    "https://via.placeholder.com/400x300?text=Studio2-Image3",
-    "https://via.placeholder.com/400x300?text=Studio2-Image4",
-    "https://via.placeholder.com/400x300?text=Studio2-Image5",
+    StudioTwo1,
+    StudioTwo2,
+    StudioTwo3,
+    StudioTwo4,
+    StudioTwo5,
+    StudioTwo6,
   ],
   "haseena-moin-hall": [
-    "/src/assets/venues/haseena-moin.png",
-    "https://via.placeholder.com/400x300?text=HaseenaMoin-Image2",
-    "https://via.placeholder.com/400x300?text=HaseenaMoin-Image3",
-    "https://via.placeholder.com/400x300?text=HaseenaMoin-Image4",
-    "https://via.placeholder.com/400x300?text=HaseenaMoin-Image5",
+    HaseenaMoin1,
+    HaseenaMoin2,
+    HaseenaMoin3,
+    HaseenaMoin4,
+    HaseenaMoin5,
+    HaseenaMoin6
   ],
   "jaun-elia-lawn": [
     "/src/assets/venues/jaun-elia.png",
@@ -473,7 +516,7 @@ const VenueSubPage = () => {
   return (
     <div className="bg-white text-black">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2 py-10">
 
         <section className="mb-12">
           <div className="flex flex-col lg:flex-row gap-8">
@@ -489,7 +532,7 @@ const VenueSubPage = () => {
                       loading="lazy"
                       style={{ backgroundColor: "#e5e7eb" }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div className="absolute inset-0"></div>
                   </div>
                 ))}
               </Slider>
@@ -502,7 +545,7 @@ const VenueSubPage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                About the Venue
+                {currentVenue.name}
               </motion.h2>
               <motion.p
                 className="text-gray-700 leading-relaxed"
@@ -665,7 +708,7 @@ const VenueSubPage = () => {
                     ></textarea>
                   </div>
                   <motion.button
-                    className="w-full px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg shadow-md transition-colors duration-300"
+                    className="px-12 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg shadow-md transition-colors duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 400 }}
