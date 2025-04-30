@@ -131,8 +131,26 @@ import LobbyArea7 from "/src/assets/venues/LobbyArea/lobbyArea7.jpg";
 import LobbyArea8 from "/src/assets/venues/LobbyArea/lobbyArea8.jpg";
 import LobbyArea9 from "/src/assets/venues/LobbyArea/lobbyArea9.jpg";
 
+// Gulrang Cafe
+import GulrangCafe1 from "/src/assets/venues/GulrangCafe/gulrangCafe1.jpg";
+import GulrangCafe2 from "/src/assets/venues/GulrangCafe/gulrangCafe2.jpg";
+import GulrangCafe3 from "/src/assets/venues/GulrangCafe/gulrangCafe3.jpg";
+import GulrangCafe4 from "/src/assets/venues/GulrangCafe/gulrangCafe4.jpg";
+import GulrangCafe5 from "/src/assets/venues/GulrangCafe/gulrangCafe5.jpg";
+
+// Audio Studio
 
 
+// Parking Area
+import ParkingArea1 from "/src/assets/venues/ParkingArea/parking1.jpg";
+import ParkingArea2 from "/src/assets/venues/ParkingArea/parking2.jpg";
+import ParkingArea3 from "/src/assets/venues/ParkingArea/parking3.jpg";
+import ParkingArea4 from "/src/assets/venues/ParkingArea/parking4.jpg";
+import ParkingArea5 from "/src/assets/venues/ParkingArea/parking5.jpg";
+import ParkingArea6 from "/src/assets/venues/ParkingArea/parking6.jpg";
+import ParkingArea7 from "/src/assets/venues/ParkingArea/parking7.jpg";
+import ParkingArea8 from "/src/assets/venues/ParkingArea/parking8.jpg";
+import ParkingArea9 from "/src/assets/venues/ParkingArea/parking9.jpg";
 
 const placeholderImages = {
   audi1: [
@@ -245,11 +263,11 @@ const placeholderImages = {
     LobbyArea9,
   ],
   "gulrang-cafe": [
-    "/src/assets/venues/gulrang.png",
-    "https://via.placeholder.com/400x300?text=GulrangCafe-Image2",
-    "https://via.placeholder.com/400x300?text=GulrangCafe-Image3",
-    "https://via.placeholder.com/400x300?text=GulrangCafe-Image4",
-    "https://via.placeholder.com/400x300?text=GulrangCafe-Image5",
+    GulrangCafe1,
+    GulrangCafe2,
+    GulrangCafe3,
+    GulrangCafe4,
+    GulrangCafe5,
   ],
   "audio-studio": [
     "/src/assets/venues/audio-studio.png",
@@ -259,11 +277,15 @@ const placeholderImages = {
     "https://via.placeholder.com/400x300?text=AudioStudio-Image5",
   ],
   "parking-area": [
-    "/src/assets/venues/parking.png",
-    "https://via.placeholder.com/400x300?text=ParkingArea-Image2",
-    "https://via.placeholder.com/400x300?text=ParkingArea-Image3",
-    "https://via.placeholder.com/400x300?text=ParkingArea-Image4",
-    "https://via.placeholder.com/400x300?text=ParkingArea-Image5",
+    ParkingArea1,
+    ParkingArea2,
+    ParkingArea3,
+    ParkingArea4,
+    ParkingArea5,
+    ParkingArea6,
+    ParkingArea7,
+    ParkingArea8,
+    ParkingArea9,
   ],
 };
 

@@ -27,7 +27,13 @@ const PrevArrow = ({ onClick }) => (
   </button>
 );
 
-// Placeholder images for each academy (5 unique images per academy)
+// Course Instructors
+// Communication Design Department
+import Instructor2 from "/src/assets/academies/CommunicationDesignAssets/muhammadAli-Instructor1.png";
+import Instructor1 from "/src/assets/academies/CommunicationDesignAssets/mOwais-Instructor2.jpeg";
+// import instructor3 from "/src/assets/academies/CommunicationDesignAssets/instructor3.jpg";
+
+
 const placeholderImages = {
   "graphic-design": [
     "https://acpkhi.com/imgs/academies.webp",
@@ -116,11 +122,9 @@ const CoursePage = () => {
         ],
       },
       instructors: [
-        { name: "Muhammad Ali", title: "Head of Department", image: "https://via.placeholder.com/150" },
-        { name: "Sachindar", title: "Graphic Design Teacher", image: "https://via.placeholder.com/150" },
-        { name: "Muhammad Owais", title: "UX/UI & 3D Graphic Designer", image: "https://via.placeholder.com/150" },
-        { name: "Muhammad Owais", title: "UX/UI & 3D Graphic Designer", image: "https://via.placeholder.com/150" },
-        { name: "Muhammad Owais", title: "UX/UI & 3D Graphic Designer", image: "https://via.placeholder.com/150" },
+        { name: "Muhammad Ali Khan", title: "Head of Department", image: Instructor2 },
+        { name: "Muhammad Owais", title: "UI/UX Designer, 2D & 3D Graphic Designer Teacher", image: Instructor1 },
+
       ],
       registerLink: "/academies/graphic-design/register",
     },
@@ -364,10 +368,10 @@ const CoursePage = () => {
     <div className="bg-white text-black">
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        {/* Hero Slider Section */}
+
         <section className="mb-12">
           <div className="flex flex-col lg:flex-row gap-8">
-            {/* Slider */}
+
             <div className="lg:w-2/3">
               <Slider {...sliderSettings}>
                 {currentCourse.heroImages.map((image, index) => (
@@ -408,7 +412,7 @@ const CoursePage = () => {
 
         {/* Tabbed Content */}
         <section>
-          {/* Tabs */}
+
           <div className="mb-12 flex flex-col sm:flex-row gap-2 sm:gap-4">
             {["details", "instructors", "howToApply", "enroll"].map((tab) => (
               <motion.button
@@ -585,7 +589,7 @@ const CoursePage = () => {
                       transition={{ duration: 0.5, delay: index * 0.2 }}
                       whileHover={{ y: -5 }}
                     >
-                      <div className="w-full h-48 mb-4 overflow-hidden rounded-md border-2 border-red-600">
+                      <div className="mb-4 overflow-hidden rounded-md border-2 border-red-600">
                         <img
                           src={instructor.image}
                           alt={instructor.name}
