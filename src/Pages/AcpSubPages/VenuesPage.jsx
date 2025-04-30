@@ -121,15 +121,15 @@ import Rooftop6 from "/src/assets/venues/RooftopLounge/rooftopLounge6.jpg";
 import Rooftop7 from "/src/assets/venues/RooftopLounge/rooftopLounge7.jpg";
 
 // Lobby Area
-import LobbyArea1 from "/src/assets/venues/lobbyArea/lobbyArea1.jpg";
-import LobbyArea2 from "/src/assets/venues/lobbyArea/lobbyArea2.jpg";
-import LobbyArea3 from "/src/assets/venues/lobbyArea/lobbyArea3.jpg";
-import LobbyArea4 from "/src/assets/venues/lobbyArea/lobbyArea4.jpg";
-import LobbyArea5 from "/src/assets/venues/lobbyArea/lobbyArea5.jpg";
-import LobbyArea6 from "/src/assets/venues/lobbyArea/lobbyArea6.jpg";
-import LobbyArea7 from "/src/assets/venues/lobbyArea/lobbyArea7.jpg";
-import LobbyArea8 from "/src/assets/venues/lobbyArea/lobbyArea8.jpg";
-import LobbyArea9 from "/src/assets/venues/lobbyArea/lobbyArea9.jpg";
+import LobbyArea1 from "/src/assets/venues/LobbyArea/lobbyArea1.jpg";
+import LobbyArea2 from "/src/assets/venues/LobbyArea/lobbyArea2.jpg";
+import LobbyArea3 from "/src/assets/venues/LobbyArea/lobbyArea3.jpg";
+import LobbyArea4 from "/src/assets/venues/LobbyArea/lobbyArea4.jpg";
+import LobbyArea5 from "/src/assets/venues/LobbyArea/lobbyArea5.jpg";
+import LobbyArea6 from "/src/assets/venues/LobbyArea/lobbyArea6.jpg";
+import LobbyArea7 from "/src/assets/venues/LobbyArea/lobbyArea7.jpg";
+import LobbyArea8 from "/src/assets/venues/LobbyArea/lobbyArea8.jpg";
+import LobbyArea9 from "/src/assets/venues/LobbyArea/lobbyArea9.jpg";
 
 
 
