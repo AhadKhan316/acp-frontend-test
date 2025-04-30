@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaLinkedin, FaTiktok } from "react-icons/fa";
 
 import acpFooterLogo from '/src/assets/acp-logo-and-hero-img/acp-logo-fullName-white.png';
 
@@ -61,9 +61,10 @@ const Footer = () => {
   const socialLinks = [
     { id: 1, href: "https://www.facebook.com/ACPKHI/", icon: FaFacebookF },
     { id: 2, href: "https://www.instagram.com/acpkhiofficial", icon: FaInstagram },
-    { id: 3, href: "https://twitter.com/@acpkhi", icon: FaTwitter },
-    { id: 4, href: "https://youtube.com/@acpkhi", icon: FaYoutube },
     { id: 5, href: "https://www.linkedin.com/company/acpkhi", icon: FaLinkedin },
+    { id: 4, href: "https://youtube.com/@acpkhi", icon: FaYoutube },
+    { id: 3, href: "https://twitter.com/@acpkhi", icon: FaTwitter },
+    { id: 5, href: "https://www.tiktok.com/@acpkhi", icon: FaTiktok },
   ];
 
 

@@ -65,6 +65,73 @@ import HaseenaMoin4 from "/src/assets/venues/HaseenaMoinHall/haseenaMoinHall4.jp
 import HaseenaMoin5 from "/src/assets/venues/HaseenaMoinHall/haseenaMoinHall5.jpg";
 import HaseenaMoin6 from "/src/assets/venues/HaseenaMoinHall/haseenaMoinHall6.jpg";
 
+// Jawin Elia Lawn
+import JaunElia1 from "/src/assets/venues/JaunEliaLawn/jaunEliaLawn1.jpg";
+import JaunElia2 from "/src/assets/venues/JaunEliaLawn/jaunEliaLawn2.jpg";
+import JaunElia3 from "/src/assets/venues/JaunEliaLawn/jaunEliaLawn3.jpg";
+import JaunElia4 from "/src/assets/venues/JaunEliaLawn/jaunEliaLawn4.jpg";
+import JaunElia5 from "/src/assets/venues/JaunEliaLawn/jaunEliaLawn5.jpg";
+import JaunElia6 from "/src/assets/venues/JaunEliaLawn/jaunEliaLawn6.jpg";
+import JaunElia7 from "/src/assets/venues/JaunEliaLawn/jaunEliaLawn7.jpg";
+import JaunElia8 from "/src/assets/venues/JaunEliaLawn/jaunEliaLawn8.jpg";
+
+// Bukhari Amphitheatre
+import BukhariAmphitheatre1 from "/src/assets/venues/Amphitheatre/amphitheatre1.jpg";
+import BukhariAmphitheatre2 from "/src/assets/venues/Amphitheatre/amphitheatre2.jpg";
+import BukhariAmphitheatre3 from "/src/assets/venues/Amphitheatre/amphitheatre3.jpg";
+import BukhariAmphitheatre4 from "/src/assets/venues/Amphitheatre/amphitheatre4.jpg";
+import BukhariAmphitheatre5 from "/src/assets/venues/Amphitheatre/amphitheatre5.jpg";
+import BukhariAmphitheatre6 from "/src/assets/venues/Amphitheatre/amphitheatre6.jpg";
+import BukhariAmphitheatre7 from "/src/assets/venues/Amphitheatre/amphitheatre7.jpg";
+import BukhariAmphitheatre8 from "/src/assets/venues/Amphitheatre/amphitheatre8.jpg";
+import BukhariAmphitheatre9 from "/src/assets/venues/Amphitheatre/amphitheatre9.jpg";
+import BukhariAmphitheatre10 from "/src/assets/venues/Amphitheatre/amphitheatre10.jpg";
+
+// Cafe D'Art
+
+// Ahmed Pervez Art Gallery
+import ArtGallery1 from "/src/assets/venues/ArtGallery/artGallery1.jpg";
+import ArtGallery2 from "/src/assets/venues/ArtGallery/artGallery2.jpg";
+import ArtGallery3 from "/src/assets/venues/ArtGallery/artGallery3.jpg";
+import ArtGallery4 from "/src/assets/venues/ArtGallery/artGallery4.jpg";
+import ArtGallery5 from "/src/assets/venues/ArtGallery/artGallery5.jpg";
+import ArtGallery6 from "/src/assets/venues/ArtGallery/artGallery6.jpg";
+import ArtGallery7 from "/src/assets/venues/ArtGallery/artGallery7.jpg";
+import ArtGallery8 from "/src/assets/venues/ArtGallery/artGallery8.jpg";
+
+// Josh Malihabadi Library
+import JoshMalihabadiLibrary1 from "/src/assets/venues/JoshMalihabadiLibrary/joshMalihabadiLibrary1.jpg";
+import JoshMalihabadiLibrary2 from "/src/assets/venues/JoshMalihabadiLibrary/joshMalihabadiLibrary2.jpg";
+import JoshMalihabadiLibrary3 from "/src/assets/venues/JoshMalihabadiLibrary/joshMalihabadiLibrary3.jpg";
+import JoshMalihabadiLibrary4 from "/src/assets/venues/JoshMalihabadiLibrary/joshMalihabadiLibrary4.jpg";
+import JoshMalihabadiLibrary5 from "/src/assets/venues/JoshMalihabadiLibrary/joshMalihabadiLibrary5.jpg";
+import JoshMalihabadiLibrary6 from "/src/assets/venues/JoshMalihabadiLibrary/joshMalihabadiLibrary6.jpg";
+import JoshMalihabadiLibrary7 from "/src/assets/venues/JoshMalihabadiLibrary/joshMalihabadiLibrary7.jpg";
+import JoshMalihabadiLibrary8 from "/src/assets/venues/JoshMalihabadiLibrary/joshMalihabadiLibrary8.jpg";
+import JoshMalihabadiLibrary9 from "/src/assets/venues/JoshMalihabadiLibrary/joshMalihabadiLibrary9.jpg";
+import JoshMalihabadiLibrary10 from "/src/assets/venues/JoshMalihabadiLibrary/joshMalihabadiLibrary10.jpg";
+
+// Rooftop Lounge
+// import Rooftop1 from "/src/assets/venues/RooftopLounge/rooftopLounge1.jpg";
+import Rooftop2 from "/src/assets/venues/RooftopLounge/rooftopLounge2.jpg";
+import Rooftop3 from "/src/assets/venues/RooftopLounge/rooftopLounge3.jpg";
+import Rooftop4 from "/src/assets/venues/RooftopLounge/rooftopLounge4.jpg";
+import Rooftop5 from "/src/assets/venues/RooftopLounge/rooftopLounge5.jpg";
+import Rooftop6 from "/src/assets/venues/RooftopLounge/rooftopLounge6.jpg";
+import Rooftop7 from "/src/assets/venues/RooftopLounge/rooftopLounge7.jpg";
+
+// Lobby Area
+import LobbyArea1 from "/src/assets/venues/lobbyArea/lobbyArea1.jpg";
+import LobbyArea2 from "/src/assets/venues/lobbyArea/lobbyArea2.jpg";
+import LobbyArea3 from "/src/assets/venues/lobbyArea/lobbyArea3.jpg";
+import LobbyArea4 from "/src/assets/venues/lobbyArea/lobbyArea4.jpg";
+import LobbyArea5 from "/src/assets/venues/lobbyArea/lobbyArea5.jpg";
+import LobbyArea6 from "/src/assets/venues/lobbyArea/lobbyArea6.jpg";
+import LobbyArea7 from "/src/assets/venues/lobbyArea/lobbyArea7.jpg";
+import LobbyArea8 from "/src/assets/venues/lobbyArea/lobbyArea8.jpg";
+import LobbyArea9 from "/src/assets/venues/lobbyArea/lobbyArea9.jpg";
+
+
 
 
 const placeholderImages = {
@@ -107,18 +174,26 @@ const placeholderImages = {
     HaseenaMoin6
   ],
   "jaun-elia-lawn": [
-    "/src/assets/venues/jaun-elia.png",
-    "https://via.placeholder.com/400x300?text=JaunElia-Image2",
-    "https://via.placeholder.com/400x300?text=JaunElia-Image3",
-    "https://via.placeholder.com/400x300?text=JaunElia-Image4",
-    "https://via.placeholder.com/400x300?text=JaunElia-Image5",
+    JaunElia1,
+    JaunElia2,
+    JaunElia3,
+    JaunElia4,
+    JaunElia5,
+    JaunElia6,
+    JaunElia7,
+    JaunElia8,
   ],
   "za-bukhari-amphitheatre": [
-    "/src/assets/venues/ampitheatre.png",
-    "https://via.placeholder.com/400x300?text=ZABukhari-Image2",
-    "https://via.placeholder.com/400x300?text=ZABukhari-Image3",
-    "https://via.placeholder.com/400x300?text=ZABukhari-Image4",
-    "https://via.placeholder.com/400x300?text=ZABukhari-Image5",
+    BukhariAmphitheatre1,
+    BukhariAmphitheatre2,
+    BukhariAmphitheatre3,
+    BukhariAmphitheatre4,
+    BukhariAmphitheatre5,
+    BukhariAmphitheatre6,
+    BukhariAmphitheatre7,
+    BukhariAmphitheatre8,
+    BukhariAmphitheatre9,
+    BukhariAmphitheatre10,
   ],
   "cafe-d-art": [
     "/src/assets/venues/cafe.png",
@@ -128,32 +203,46 @@ const placeholderImages = {
     "https://via.placeholder.com/400x300?text=CafeDArt-Image5",
   ],
   "ahmed-pervez-art-gallery": [
-    "/src/assets/venues/art-gallery.png",
-    "https://via.placeholder.com/400x300?text=AhmedPervez-Image2",
-    "https://via.placeholder.com/400x300?text=AhmedPervez-Image3",
-    "https://via.placeholder.com/400x300?text=AhmedPervez-Image4",
-    "https://via.placeholder.com/400x300?text=AhmedPervez-Image5",
+    ArtGallery1,
+    ArtGallery2,
+    ArtGallery3,
+    ArtGallery4,
+    ArtGallery5,
+    ArtGallery6,
+    ArtGallery7,
+    ArtGallery8,
   ],
   "josh-malihabadi-library": [
-    "/src/assets/venues/library.png",
-    "https://via.placeholder.com/400x300?text=JoshMalihabadi-Image2",
-    "https://via.placeholder.com/400x300?text=JoshMalihabadi-Image3",
-    "https://via.placeholder.com/400x300?text=JoshMalihabadi-Image4",
-    "https://via.placeholder.com/400x300?text=JoshMalihabadi-Image5",
+    JoshMalihabadiLibrary1,
+    JoshMalihabadiLibrary2,
+    JoshMalihabadiLibrary3,
+    JoshMalihabadiLibrary4,
+    JoshMalihabadiLibrary5,
+    JoshMalihabadiLibrary6,
+    JoshMalihabadiLibrary7,
+    JoshMalihabadiLibrary8,
+    JoshMalihabadiLibrary9,
+    JoshMalihabadiLibrary10,
   ],
   "360-rooftop-lounge": [
-    "/src/assets/venues/rooftop.png",
-    "https://via.placeholder.com/400x300?text=360Rooftop-Image2",
-    "https://via.placeholder.com/400x300?text=360Rooftop-Image3",
-    "https://via.placeholder.com/400x300?text=360Rooftop-Image4",
-    "https://via.placeholder.com/400x300?text=360Rooftop-Image5",
+    // Rooftop1,
+    Rooftop2,
+    Rooftop3,
+    Rooftop4,
+    Rooftop5,
+    Rooftop6,
+    Rooftop7,
   ],
   "lobby-area": [
-    "/src/assets/venues/lobby.png",
-    "https://via.placeholder.com/400x300?text=LobbyArea-Image2",
-    "https://via.placeholder.com/400x300?text=LobbyArea-Image3",
-    "https://via.placeholder.com/400x300?text=LobbyArea-Image4",
-    "https://via.placeholder.com/400x300?text=LobbyArea-Image5",
+    LobbyArea1,
+    LobbyArea2,
+    LobbyArea3,
+    LobbyArea4,
+    LobbyArea5,
+    LobbyArea6,
+    LobbyArea7,
+    LobbyArea8,
+    LobbyArea9,
   ],
   "gulrang-cafe": [
     "/src/assets/venues/gulrang.png",

@@ -118,28 +118,23 @@ const Navbar = () => {
                     </li>
 
                     <li className="relative group">
-                        <DropdownButton onClick={(e) => toggleSubMenu("production", e)} isOpen={isSubMenuOpen["production"]}>Initiative</DropdownButton>
+                        <DropdownButton onClick={(e) => toggleSubMenu("production", e)} isOpen={isSubMenuOpen["production"]}>
+                            Initiatives
+                        </DropdownButton>
+
                         {isSubMenuOpen["production"] && (
                             <div className="absolute top-full left-0 mt-2 w-64 bg-black rounded-md shadow-lg z-40">
-                                <div className="relative">
-                                    <SubSubMenuButton onClick={(e) => toggleSubSubMenu("festival", e)} isOpen={isSubSubMenuOpen["festival"]}>
-                                        Festival
-                                    </SubSubMenuButton>
-                                    {isSubSubMenuOpen["festival"] && (
-                                        <div className="absolute top-0 left-full ml-2 w-64 bg-black rounded-md shadow-lg z-50">
-                                            <NavLink to="/festival/wcf">World Culture Festival</NavLink>
-                                            <NavLink to="/festival/auc">Aalmi Urdu Conference</NavLink>
-                                            <NavLink to="/festival/plf">Pakistan Literature Festival</NavLink>
-                                            <NavLink to="/festival/ptf">Pakistan Theatre Festival</NavLink>
-                                            <NavLink to="/festival/pyf">Pakistan Youth Festival</NavLink>
-                                            <NavLink to="/festival/wc">Women Conference</NavLink>
-                                            <NavLink to="/festival/aaf">Arts Alumni Festival</NavLink>
-                                        </div>
-                                    )}
-                                </div>
+                                <NavLink to="/festival/wcf">World Culture Festival</NavLink>
+                                <NavLink to="/festival/auc">Aalmi Urdu Conference</NavLink>
+                                <NavLink to="/festival/plf">Pakistan Literature Festival</NavLink>
+                                <NavLink to="/festival/ptf">Pakistan Theatre Festival</NavLink>
+                                <NavLink to="/festival/pyf">Pakistan Youth Festival</NavLink>
+                                <NavLink to="/festival/wc">Women Conference</NavLink>
+                                <NavLink to="/festival/aaf">Arts Alumni Festival</NavLink>
                             </div>
                         )}
                     </li>
+
 
                     <li><NavLink to="/sovapa">Sovapa</NavLink></li>
                     <li><NavLink to="/facilities">Facilities</NavLink></li>
@@ -180,29 +175,24 @@ const Navbar = () => {
                             )}
                         </li>
 
-                        <li className="relative">
+                        <li className="relative group">
                             <DropdownButton onClick={(e) => toggleSubMenu("production", e)} isOpen={isSubMenuOpen["production"]}>
-                                Initiative
+                                Initiatives
                             </DropdownButton>
+
                             {isSubMenuOpen["production"] && (
-                                <div className="ml-4">
-                                    <SubSubMenuButton onClick={(e) => toggleSubSubMenu("festival", e)} isOpen={isSubSubMenuOpen["festival"]}>
-                                        Festival
-                                    </SubSubMenuButton>
-                                    {isSubSubMenuOpen["festival"] && (
-                                        <div className="ml-4">
-                                            <NavLink to="/festival/wcf">World Culture Festival</NavLink>
-                                            <NavLink to="/festival/auc">Aalmi Urdu Conference</NavLink>
-                                            <NavLink to="/festival/plf">Pakistan Literature Festival</NavLink>
-                                            <NavLink to="/festival/ptf">Pakistan Theatre Festival</NavLink>
-                                            <NavLink to="/festival/pyf">Pakistan Youth Festival</NavLink>
-                                            <NavLink to="/festival/wc">Women Conference</NavLink>
-                                            <NavLink to="/festival/aaf">Arts Alumni Festival</NavLink>
-                                        </div>
-                                    )}
+                                <div className="relative top-full left-0 mt-2 w-64 bg-black rounded-md shadow-lg z-40">
+                                    <NavLink to="/festival/wcf">World Culture Festival</NavLink>
+                                    <NavLink to="/festival/auc">Aalmi Urdu Conference</NavLink>
+                                    <NavLink to="/festival/plf">Pakistan Literature Festival</NavLink>
+                                    <NavLink to="/festival/ptf">Pakistan Theatre Festival</NavLink>
+                                    <NavLink to="/festival/pyf">Pakistan Youth Festival</NavLink>
+                                    <NavLink to="/festival/wc">Women Conference</NavLink>
+                                    <NavLink to="/festival/aaf">Arts Alumni Festival</NavLink>
                                 </div>
                             )}
                         </li>
+
 
                         <li><NavLink to="/sovapa">Sovapa</NavLink></li>
                         <li><NavLink to="/facilities">Facilities</NavLink></li>

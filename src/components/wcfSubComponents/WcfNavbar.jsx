@@ -2,8 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaChevronDown, FaChevronRight, FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa';
 
-// Logo
+// ACP Logo
+import acpLogo from '/src/assets/acp-logo-and-hero-img/acp-logo-fullName-white.png';
+
+// WCF Logo
 import wcfLogo from '/src/assets/wcf-assets/wcf-logo.png';
+
+
 
 function WcfNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -65,14 +70,27 @@ function WcfNavbar() {
         className="h-[90px] max-w-screen-xl flex items-center justify-between mx-auto px-4 sm:px-6 lg:px-8"
         ref={menuRef}
       >
-        {/* Logo */}
-        <Link to="/festival/wcf" className="flex items-center h-full">
-          <img
-            src={wcfLogo}
-            alt="World Culture Festival Logo"
-            className="object-contain w-auto max-h-[85px] max-w-[200px] sm:max-h-[85px] lg:max-h-[85px]"
-          />
-        </Link>
+        {/* ACP X WCF Logo */}
+        <div className="flex items-center gap-2 h-full">
+          <Link to="/" className="h-full flex items-center">
+            <img
+              src={acpLogo}
+              alt="ACP Logo"
+              className="object-contain w-auto max-h-[150px] max-w-[200px] sm:max-h-[150px] lg:max-h-[150px]"
+            />
+          </Link>
+
+          <span className="text-white text-xl font-bold">X</span>
+
+          <Link to="/festival/wcf" className="h-full flex items-center">
+            <img
+              src={wcfLogo}
+              alt="World Culture Festival Logo"
+              className="object-contain w-auto max-h-[85px] max-w-[200px] sm:max-h-[85px] lg:max-h-[85px]"
+            />
+          </Link>
+        </div>
+
 
         {/* Hamburger Icon */}
         <button onClick={toggleMenu} className="text-white lg:hidden">
@@ -164,6 +182,12 @@ function WcfNavbar() {
 
             <li><NavLink to="/festival/wcf/mediaCoverage">Media Coverage</NavLink></li>
             <li><NavLink to="/festival/wcf/contactUs">Contact Us</NavLink></li>
+            <Link
+              to="/"
+              className="block w-full text-center px-4 py-2 mt-2 text-white bg-red-700 rounded-md hover:bg-red-800 transition duration-200"
+            >
+              Back to ACP Home
+            </Link>
           </ul>
 
           {/* Social Media Icons (Mobile) */}
@@ -189,23 +213,21 @@ function WcfNavbar() {
           <div className="space-y-4">
             {[
               {
-                href: "#",
+                href: "https://www.instagram.com/acpkhiofficial",
                 icon: <FaInstagram className="h-6 w-6" />,
                 alt: "Instagram",
+
               },
               {
-                href: "#",
-                icon: <FaFacebookF className="h-6 w-6" />,
+                href: "https://www.facebook.com/ACPKHI/", icon: <FaFacebookF className="h-6 w-6" />,
                 alt: "Facebook",
               },
               {
-                href: "#",
-                icon: <FaTiktok className="h-6 w-6" />,
+                href: "https://www.tiktok.com/@acpkhi", icon: <FaTiktok className="h-6 w-6" />,
                 alt: "TikTok",
               },
               {
-                href: "#",
-                icon: <FaYoutube className="h-6 w-6" />,
+                href: "https://youtube.com/@acpkhi", icon: <FaYoutube className="h-6 w-6" />,
                 alt: "YouTube",
               },
             ].map((item) => (
@@ -214,6 +236,8 @@ function WcfNavbar() {
                 href={item.href}
                 className="block text-white hover:text-red-600 transition duration-300"
                 aria-label={item.alt}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {item.icon}
               </a>
