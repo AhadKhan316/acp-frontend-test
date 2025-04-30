@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+<<<<<<< HEAD
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
+=======
+import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaLinkedin, FaTiktok } from "react-icons/fa";
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
 
 import acpFooterLogo from '/src/assets/acp-logo-and-hero-img/acp-logo-fullName-white.png';
 
@@ -59,12 +63,24 @@ const Footer = () => {
   ];
 
   const socialLinks = [
+<<<<<<< HEAD
     { id: 1, href: "#", icon: FaFacebookF },
     { id: 2, href: "#", icon: FaInstagram },
     { id: 3, href: "#", icon: FaTwitter },
     { id: 4, href: "#", icon: FaYoutube },
   ];
 
+=======
+    { id: 1, href: "https://www.facebook.com/ACPKHI/", icon: FaFacebookF },
+    { id: 2, href: "https://www.instagram.com/acpkhiofficial", icon: FaInstagram },
+    { id: 5, href: "https://www.linkedin.com/company/acpkhi", icon: FaLinkedin },
+    { id: 4, href: "https://youtube.com/@acpkhi", icon: FaYoutube },
+    { id: 3, href: "https://twitter.com/@acpkhi", icon: FaTwitter },
+    { id: 5, href: "https://www.tiktok.com/@acpkhi", icon: FaTiktok },
+  ];
+
+
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
   // Framer Motion variants for section animation
   const sectionVariants = {
     hidden: { opacity: 0 },
@@ -108,6 +124,10 @@ const Footer = () => {
 
   return (
     <motion.footer
+<<<<<<< HEAD
+=======
+      id="footer"
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
       className="py-6 sm:py-6 bg-black text-white"
       initial="hidden"
       animate="visible"
@@ -159,7 +179,11 @@ const Footer = () => {
                   </svg>
                 </span>
                 <div>
+<<<<<<< HEAD
                   <p className="font-bold text-xl sm:text-xl lg:text-xl text-white">UN No</p>
+=======
+                  <p className="font-bold text-xl sm:text-xl lg:text-xl text-white">UAN</p>
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
                   <p className="text-gray-200 text-base sm:text-sm max-w-xs">021-111-227-544
                   </p>
                 </div>
@@ -316,13 +340,22 @@ const Footer = () => {
           <div className="flex justify-center mt-3 space-x-3 sm:space-x-4">
             {socialLinks.map((link, index) => (
               <motion.a
+<<<<<<< HEAD
                 key={link.id}
                 href={link.href}
+=======
+
+                key={link.id}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
                 className="relative p-2 sm:p-2.5 rounded-full bg-white shadow-md hover:bg-gray-200 transition duration-300"
                 custom={14 + index}
                 variants={iconVariants}
                 whileHover="hover"
               >
+<<<<<<< HEAD
                 <link.icon className="h-6 w-6 sm:h-6 sm:w-6 text-[#B90602] group-hover:text-red-700" />
               </motion.a>
             ))}
@@ -330,6 +363,29 @@ const Footer = () => {
         </motion.div>
       </div>
     </motion.footer>
+=======
+                <link.icon target="_blank" className="h-6 w-6 sm:h-6 sm:w-6 text-[#B90602] group-hover:text-red-700" />
+              </motion.a>
+            ))}
+            {/* {socialLinks.map(({ id, href, icon: Icon }, index) => (
+                <motion.a
+                  key={id}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  custom={index}
+                  variants={iconVariants}
+                  whileHover="hover"
+                  className="text-gray-400 hover:text-white transition"
+                >
+                  <Icon size={20} />
+                </motion.a>
+              ))} */}
+          </div>
+        </motion.div>
+      </div >
+    </motion.footer >
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
   );
 };
 

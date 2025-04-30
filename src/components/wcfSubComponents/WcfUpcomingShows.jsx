@@ -1,8 +1,13 @@
 import React from "react";
 import StepCarousel from "../wcfReusableComponents/WcfLandingPageStepCarousel";
 
+<<<<<<< HEAD
 import show1 from "/src/assets/wcf-assets/Road_show.jpg"
 import show2 from "/src/assets/venues/Audi1/2.jpg"
+=======
+import show1 from "/src/assets/wcf-assets/wcf-upcomingShows/Road-show.jpg"
+import show2 from "/src/assets/wcf-assets/wcf-upcomingShows/Berlin-nach-Lahore-Poster.jpg"
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
 
 // Step Data
 const steps = [
@@ -44,7 +49,11 @@ function WcfUpcomingShows() {
       steps={steps}
       title="Upcoming Events"
       slidesPerView={1}
+<<<<<<< HEAD
       spaceBetween={-100}
+=======
+      spaceBetween={20}
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
       autoplayDelay={3000}
       breakpoints={{
         640: { slidesPerView: 2 },
@@ -53,7 +62,11 @@ function WcfUpcomingShows() {
       pagination={false}
       imageAspectRatio="1/1"
       maxImageHeight="600px"
+<<<<<<< HEAD
       // maxImageWidth="550px"
+=======
+    // maxImageWidth="550px"
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
     />
   );
 }

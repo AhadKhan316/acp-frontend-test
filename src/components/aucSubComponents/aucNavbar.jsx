@@ -1,6 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown, FaChevronRight, FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
+<<<<<<< HEAD
+=======
+
+// ACP Logo
+import acpLogo from '/src/assets/acp-logo-and-hero-img/acp-logo-fullName-white.png';
+
+// AUC Logo
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
 import AucLogo from "/src/assets/auc-assets/auc-logo.png";
 
 const AucNavbar = () => {
@@ -97,6 +105,7 @@ const AucNavbar = () => {
         className="h-[100px] max-w-screen-xl flex items-center justify-between mx-auto px-4 sm:px-6 lg:px-8"
         ref={navRef}
       >
+<<<<<<< HEAD
         {/* Logo */}
         <Link to="/festival/auc" className="flex items-center h-full">
           <img
@@ -105,6 +114,28 @@ const AucNavbar = () => {
             className="object-contain w-auto max-h-[90px] max-w-[200px] sm:max-h-[90px] lg:max-h-[90px]"
           />
         </Link>
+=======
+        {/* ACP X PLF Logo */}
+        <div className="flex items-center gap-2 h-full">
+          <Link to="/" className="h-full flex items-center">
+            <img
+              src={acpLogo}
+              alt="ACP Logo"
+              className="object-contain w-auto max-h-[150px] max-w-[200px] sm:max-h-[150px] lg:max-h-[150px]"
+            />
+          </Link>
+
+          <span className="text-white text-xl font-bold">X</span>
+
+          <Link to="/festival/auc" className="h-full flex items-center">
+            <img
+              src={AucLogo}
+              alt="AUC Logo"
+              className="object-contain w-auto max-h-[90px] max-w-[200px] sm:max-h-[90px] lg:max-h-[90px]"
+            />
+          </Link>
+        </div>
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
 
         {/* Hamburger Icon */}
         <button onClick={toggleMenu} className="text-white lg:hidden">
@@ -139,9 +170,15 @@ const AucNavbar = () => {
           <li><NavLink to="/festival/auc/sessions">Sessions</NavLink></li>
           <li><NavLink to="/festival/auc/contactUs">Contact Us</NavLink></li>
           <li>
+<<<<<<< HEAD
             <button className="bg-red-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-800 transition duration-300">
               Register Now
             </button>
+=======
+            {/* <button className="bg-red-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-800 transition duration-300">
+              Register Now
+            </button> */}
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
           </li>
         </ul>
 
@@ -181,24 +218,62 @@ const AucNavbar = () => {
             <li><NavLink to="/festival/auc/sessions">Sessions</NavLink></li>
             <li><NavLink to="/festival/auc/contactUs">Contact Us</NavLink></li>
             <li>
+<<<<<<< HEAD
               <button className="bg-red-700 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-800 transition duration-300 w-full">
                 Register Now
               </button>
+=======
+              {/* <button className="bg-red-700 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-800 transition duration-300 w-full">
+                Register Now
+              </button> */}
+              <Link
+                to="/"
+                className="block w-full text-center px-4 py-2 mt-2 text-white bg-red-700 rounded-md hover:bg-red-800 transition duration-200"
+              >
+                Back to ACP Home
+              </Link>
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
             </li>
             {/* Social Media Icons in Mobile Menu */}
             <li>
               <div className="flex justify-center space-x-4 mt-4">
                 {[
+<<<<<<< HEAD
                   { href: "#", icon: <FaInstagram className="h-6 w-6" />, alt: "Instagram" },
                   { href: "#", icon: <FaFacebookF className="h-6 w-6" />, alt: "Facebook" },
                   { href: "#", icon: <FaTiktok className="h-6 w-6" />, alt: "TikTok" },
                   { href: "#", icon: <FaYoutube className="h-6 w-6" />, alt: "YouTube" },
+=======
+                  {
+                    href: "https://www.instagram.com/acpkhiofficial",
+                    icon: <FaInstagram className="h-6 w-6" />,
+                    alt: "Instagram",
+
+                  },
+                  {
+                    href: "https://www.facebook.com/ACPKHI/", icon: <FaFacebookF className="h-6 w-6" />,
+                    alt: "Facebook",
+                  },
+                  {
+                    href: "https://www.tiktok.com/@acpkhi", icon: <FaTiktok className="h-6 w-6" />,
+                    alt: "TikTok",
+                  },
+                  {
+                    href: "https://youtube.com/@acpkhi", icon: <FaYoutube className="h-6 w-6" />,
+                    alt: "YouTube",
+                  },
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
                 ].map((item) => (
                   <a
                     key={item.alt}
                     href={item.href}
                     className="text-white hover:text-red-700 transition duration-300"
                     aria-label={item.alt}
+<<<<<<< HEAD
+=======
+                    target="_blank"
+                    rel="noopener noreferrer"
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
                   >
                     {item.icon}
                   </a>
