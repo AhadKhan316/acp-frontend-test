@@ -8,6 +8,8 @@ import UpcomingEvents from './components/UpcomingEvents';
 import About from './components/About';
 // import PresidentMessage from './components/PresidentMessage';
 import StayUpdated from './components/StayUpdated';
+
+import Academy from './components/Academy';
 import Sovapa from './components/Academy';
 import CommunityFeedback from './components/CommunityFeedback';
 import Production from './components/Production';
@@ -16,6 +18,8 @@ import OurSponsors from './components/Sponsors';
 import ContactUs from './Pages/ContactUs';
 
 // Pages
+import AcademiesPage from './Pages/AcademyPage';
+import VenuesPage from './Pages/VenuePage';
 import SovapaPage from './Pages/SovapaPage';
 import VenuesPage from './Pages/Venue';
 import AboutUs from './Pages/AboutUs';
@@ -27,9 +31,10 @@ import Tenders from './Pages/Tenders';
 
 // ACP Sub Pages
 import UpcomingEventsPage from './Pages/AcpSubPages/UpcomingEventsPage';
+import AcademyCoursePage from './Pages/AcpSubPages/AcademyCoursePage';
+import VenueSubPage from './Pages/AcpSubPages/VenuesPage';
 import SovapaCoursePage from './Pages/AcpSubPages/SovapaCoursePage';
 import VenueSubPage from './Pages/AcpSubPages/VenuesPage';
-
 
 // WCF Page
 import WorldCultureFestival from './Pages/WorldCulturalFestival';
@@ -49,6 +54,9 @@ import WomenConference from './Pages/WomenConference'
 // PTF Pages
 import PakistanTheatreFestival from './Pages/PakistanTheatreFestival';
 
+//registration page
+
+import Registrations  from './Pages/Registrations';
 // AAF Pages
 import ArtsAlumniFestival from './Pages/AlumniFestival';
 
@@ -64,6 +72,7 @@ const App = () => {
               <About />
               <UpcomingEvents />
               {/* <PresidentMessage /> */}
+              <Academy />
               <Sovapa />
 
               <Production />
@@ -76,6 +85,12 @@ const App = () => {
 
           {/* ACP Sub Pages */}
           <Route path="/upcomingEvents" element={<UpcomingEventsPage />}></Route>
+
+          <Route path="/academies/:department" element={<AcademyCoursePage />}></Route>
+          <Route path="/venues/:venueId" element={<VenueSubPage />} />
+
+
+          <Route path="/academies" element={<AcademiesPage />} />
           <Route path="/sovapa/:department" element={<SovapaCoursePage />}></Route>
           <Route path="/facilities/:venueId" element={<VenueSubPage />} />
 
@@ -115,6 +130,7 @@ const App = () => {
         {/* PTF */}
         <Route path="/festival/ptf/*" element={<PakistanTheatreFestival />} />
 
+        <Route path="/Registrations/*" element={<Registrations/>} />
         {/* AAF */}
         {/* <Route path="/festival/aaf/*" element={<ArtsAlumniFestival />} /> */}
 

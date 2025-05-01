@@ -36,6 +36,17 @@ const PlfHero = () => {
     },
   };
 
+<<<<<<< HEAD
+=======
+  const moveDown = () => {
+    const targetSection = document.getElementById("footer");
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
   const titleVariants = {
     hidden: { opacity: 0, x: -50 },
     visible: {
@@ -69,7 +80,11 @@ const PlfHero = () => {
   };
 
   return (
+<<<<<<< HEAD
     <section className="relative w-full h-[80vh] sm:h-[70vh] md:h-[100vh] lg:h-[100vh] text-white flex items-center justify-center overflow-hidden">
+=======
+    <section className="relative w-full h-[50vh] sm:h-[50vh] md:h-[60vh] lg:h-[95vh] text-white flex items-center justify-center overflow-hidden">
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
       {/* Background Slider */}
       <div className="absolute inset-0 w-full h-full">
         {slides.map((slide, index) => (
@@ -118,15 +133,44 @@ const PlfHero = () => {
       </motion.div>
 
       {/* Slide Indicators */}
+<<<<<<< HEAD
       <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
         {slides.map((_, index) => (
           <span
             key={index}
             className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${index === currentSlide ? "bg-green-700" : "bg-gray-400"
+=======
+      <div className="absolute bottom-23 sm:bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+        {slides.map((_, index) => (
+          <span
+            key={index}
+            className={` w-2 h-2 sm:w-3 sm:h-3 rounded-full ${index === currentSlide ? "bg-white" : "bg-green-700"
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
               }`}
           />
         ))}
       </div>
+<<<<<<< HEAD
+=======
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-10 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+        <div className="animate-bounce">
+          <svg
+            className="w-6 h-6 text-white"
+            onClick={moveDown}
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
+      </div>
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
     </section>
   );
 };

@@ -118,7 +118,8 @@ const Navbar = () => {
                     </li>
 
                     <li className="relative group">
-                        <DropdownButton onClick={(e) => toggleSubMenu("production", e)} isOpen={isSubMenuOpen["production"]}>Initiative</DropdownButton>
+<<<<<<< HEAD
+                        <DropdownButton onClick={(e) => toggleSubMenu("production", e)} isOpen={isSubMenuOpen["production"]}>Production</DropdownButton>
                         {isSubMenuOpen["production"] && (
                             <div className="absolute top-full left-0 mt-2 w-64 bg-black rounded-md shadow-lg z-40">
                                 <div className="relative">
@@ -133,17 +134,38 @@ const Navbar = () => {
                                             <NavLink to="/festival/ptf">Pakistan Theatre Festival</NavLink>
                                             <NavLink to="/festival/pyf">Pakistan Youth Festival</NavLink>
                                             <NavLink to="/festival/wc">Women Conference</NavLink>
-                                            <NavLink to="/festival/aaf">Arts Alumni Festival</NavLink>
                                         </div>
                                     )}
                                 </div>
+=======
+                        <DropdownButton onClick={(e) => toggleSubMenu("production", e)} isOpen={isSubMenuOpen["production"]}>
+                            Initiatives
+                        </DropdownButton>
+
+                        {isSubMenuOpen["production"] && (
+                            <div className="absolute top-full left-0 mt-2 w-64 bg-black rounded-md shadow-lg z-40">
+                                <NavLink to="/festival/wcf">World Culture Festival</NavLink>
+                                <NavLink to="/festival/auc">Aalmi Urdu Conference</NavLink>
+                                <NavLink to="/festival/plf">Pakistan Literature Festival</NavLink>
+                                <NavLink to="/festival/ptf">Pakistan Theatre Festival</NavLink>
+                                <NavLink to="/festival/pyf">Pakistan Youth Festival</NavLink>
+                                <NavLink to="/festival/wc">Women Conference</NavLink>
+                                <NavLink to="/festival/aaf">Arts Alumni Festival</NavLink>
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
                             </div>
                         )}
                     </li>
 
+<<<<<<< HEAD
+                    <li><NavLink to="/academies">Academies</NavLink></li>
+                    <li><NavLink to="/facilities">Facilities</NavLink></li>
+                    <li><NavLink to="/events">Events</NavLink></li>
+=======
+
                     <li><NavLink to="/sovapa">Sovapa</NavLink></li>
                     <li><NavLink to="/facilities">Facilities</NavLink></li>
                     {/* <li><NavLink to="/events">Events</NavLink></li> */}
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
 
                     <li className="relative group">
                         <DropdownButton onClick={(e) => toggleSubMenu("resources", e)} isOpen={isSubMenuOpen["resources"]}>Resources</DropdownButton>
@@ -180,9 +202,10 @@ const Navbar = () => {
                             )}
                         </li>
 
+<<<<<<< HEAD
                         <li className="relative">
                             <DropdownButton onClick={(e) => toggleSubMenu("production", e)} isOpen={isSubMenuOpen["production"]}>
-                                Initiative
+                                Production
                             </DropdownButton>
                             {isSubMenuOpen["production"] && (
                                 <div className="ml-4">
@@ -197,16 +220,38 @@ const Navbar = () => {
                                             <NavLink to="/festival/ptf">Pakistan Theatre Festival</NavLink>
                                             <NavLink to="/festival/pyf">Pakistan Youth Festival</NavLink>
                                             <NavLink to="/festival/wc">Women Conference</NavLink>
-                                            <NavLink to="/festival/aaf">Arts Alumni Festival</NavLink>
                                         </div>
                                     )}
+=======
+                        <li className="relative group">
+                            <DropdownButton onClick={(e) => toggleSubMenu("production", e)} isOpen={isSubMenuOpen["production"]}>
+                                Initiatives
+                            </DropdownButton>
+
+                            {isSubMenuOpen["production"] && (
+                                <div className="relative top-full left-0 mt-2 w-64 bg-black rounded-md shadow-lg z-40">
+                                    <NavLink to="/festival/wcf">World Culture Festival</NavLink>
+                                    <NavLink to="/festival/auc">Aalmi Urdu Conference</NavLink>
+                                    <NavLink to="/festival/plf">Pakistan Literature Festival</NavLink>
+                                    <NavLink to="/festival/ptf">Pakistan Theatre Festival</NavLink>
+                                    <NavLink to="/festival/pyf">Pakistan Youth Festival</NavLink>
+                                    <NavLink to="/festival/wc">Women Conference</NavLink>
+                                    <NavLink to="/festival/aaf">Arts Alumni Festival</NavLink>
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
                                 </div>
                             )}
                         </li>
 
+<<<<<<< HEAD
+                        <li><NavLink to="/academies">Academies</NavLink></li>
+                        <li><NavLink to="/facilities">Facilities</NavLink></li>
+                        <li><NavLink to="/events">Events</NavLink></li>
+=======
+
                         <li><NavLink to="/sovapa">Sovapa</NavLink></li>
                         <li><NavLink to="/facilities">Facilities</NavLink></li>
                         {/* <li><NavLink to="/events">Events</NavLink></li> */}
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
                         <li className="relative group">
                             <DropdownButton onClick={(e) => toggleSubMenu("resources", e)} isOpen={isSubMenuOpen["resources"]}>Resources</DropdownButton>
                             {isSubMenuOpen["resources"] && (
@@ -227,6 +272,25 @@ const Navbar = () => {
                     <div className="space-y-4">
                         {[
                             {
+<<<<<<< HEAD
+                                href: "#", // Replace with actual WC Instagram URL
+                                icon: <FaInstagram className="h-6 w-6" />,
+                                alt: "Instagram",
+                            },
+                            {
+                                href: "#", // Replace with actual WC Facebook URL
+                                icon: <FaFacebookF className="h-6 w-6" />,
+                                alt: "Facebook",
+                            },
+                            {
+                                href: "#", // Replace with actual WC TikTok URL
+                                icon: <FaTiktok className="h-6 w-6" />,
+                                alt: "TikTok",
+                            },
+                            {
+                                href: "#", // Replace with actual WC YouTube URL
+                                icon: <FaYoutube className="h-6 w-6" />,
+=======
                                 href: "https://www.instagram.com/acpkhiofficial",
                                 icon: <FaInstagram className="h-6 w-6" />,
                                 alt: "Instagram",
@@ -242,6 +306,7 @@ const Navbar = () => {
                             },
                             {
                                 href: "https://youtube.com/@acpkhi", icon: <FaYoutube className="h-6 w-6" />,
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
                                 alt: "YouTube",
                             },
                         ].map((item) => (
@@ -250,8 +315,11 @@ const Navbar = () => {
                                 href={item.href}
                                 className="block text-white hover:text-red-700 transition duration-300"
                                 aria-label={item.alt}
+<<<<<<< HEAD
+=======
                                 target="_blank"
                                 rel="noopener noreferrer"
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
                             >
                                 {item.icon}
                             </a>

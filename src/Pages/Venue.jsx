@@ -80,51 +80,51 @@ const VenuesPage = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
               {venueData.map((item, index) => (
-                <motion.div
-                  key={item.id}
-                  className="relative h-full rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{
-                    y: -8,
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                  }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 15,
-                    duration: 0.5
-                  }}
-                  viewport={{ once: true, margin: "0px 0px -50px 0px" }}
-                >
-                  {/* Image container with aspect ratio */}
-                  <div className="relative w-full aspect-[5/5] overflow-hidden">
-                    <motion.img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                      loading="lazy"
-                      initial={{ scale: 1 }}
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.5 }}
-                    />
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-                  </div>
+                <Link to={`/facilities/${item.slug}`}>
+                  <motion.div
+                    key={item.id}
+                    className="relative h-full rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    whileHover={{
+                      y: -8,
+                      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 15,
+                      duration: 0.5
+                    }}
+                    viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+                  >
+                    {/* Image container with aspect ratio */}
+                    <div className="relative w-full aspect-[5/5] overflow-hidden">
+                      <motion.img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        loading="lazy"
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.5 }}
+                      />
+                      {/* Gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                    </div>
 
-                  {/* Content overlay */}
-                  <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2, duration: 0.5 }}
-                      viewport={{ once: true }}
-                    >
-                      <h3 className="text-2xl font-bold mb-2 drop-shadow-md">{item.name}</h3>
-                      {item.description && (
-                        <p className="text-sm mb-4 drop-shadow-md">{item.description}</p>
-                      )}
-                      <Link to={`/facilities/${item.slug}`}>
+                    {/* Content overlay */}
+                    <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2, duration: 0.5 }}
+                        viewport={{ once: true }}
+                      >
+                        <h3 className="text-2xl font-bold mb-2 drop-shadow-md">{item.name}</h3>
+                        {item.description && (
+                          <p className="text-sm mb-4 drop-shadow-md">{item.description}</p>
+                        )}
                         <motion.button
                           className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg shadow-sm transition-colors duration-300 flex items-center"
                           whileHover={{
@@ -144,10 +144,11 @@ const VenuesPage = () => {
                             <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                           </svg>
                         </motion.button>
-                      </Link>
-                    </motion.div>
-                  </div>
-                </motion.div>
+
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                </Link>
               ))}
             </div>
           </div>

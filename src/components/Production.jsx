@@ -175,7 +175,11 @@ const ProductionMessage = () => {
                 variants={itemVariants}
               >
                 <button className="px-8 py-3 bg-red-700 hover:bg-red-800 text-white font-semibold rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+<<<<<<< HEAD
+                  Explore Our Productions
+=======
                   Explore Our Initiatives
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
                 </button>
               </motion.div>
             </motion.div>

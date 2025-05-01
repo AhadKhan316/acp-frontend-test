@@ -103,7 +103,9 @@ const AboutUs = () => {
             <motion.button
               key={section}
               onClick={() => handleSectionChange(section)}
-              className={`px-6 py-3 rounded-xl font-semibold capitalize text-base sm:text-lg transition-all duration-300 ${activeSection === section
+
+              className={`px-6 py-3 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 ${activeSection 
+              className={`px-6 py-3 rounded-xl font-semibold capitalize text-base sm:text-lg transition-all duration-300 ${activeSection 
                 ? "bg-[#B90602] text-white shadow-md cursor-pointer"
                 : "bg-[#B90602] text-white curdor-pointer hover:bg-black/80 to-black/90 hover:shadow-lg cursor-pointer"
                 }`}

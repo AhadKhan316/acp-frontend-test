@@ -11,10 +11,17 @@ const UpcomingEvents = () => {
     {
       id: 1,
       title: "Arts Alumni Festival",
+<<<<<<< HEAD
+      date: "9,10,11 May 2025",
+      description: "Join us for the second chapter of our cultural event in Sukkur.",
+      image: posterImg1,
+      registerLink: "https://acpkhi.com/alumni",
+=======
       date: "2025-05-09",
       description: "Join us for the second chapter of our cultural event in Sukkur.",
       image: posterImg1,
       registerLink: "/alumni",
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
     },
     // {
     //   id: 2,
@@ -27,7 +34,11 @@ const UpcomingEvents = () => {
     {
       id: 3,
       title: "Sovapa Admission Open",
+<<<<<<< HEAD
+      date: "2025-6-20",
+=======
       date: "2025-04-13",
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
       description: "Learn from experts in our series of art workshops.",
       image: posterImg3,
       registerLink: "https://acpkhi.com/admissions",
@@ -133,6 +144,13 @@ const UpcomingEvents = () => {
                   <div className="flex flex-col">
                     {/* Event Image */}
                     <div className="w-full mb-4">
+<<<<<<< HEAD
+                      <img
+                        src={event.image}
+                        alt={event.title}
+                        className="w-full h-auto object-contain rounded-lg"
+                      />
+=======
                       <Link to={event.registerLink}>
                         <img
                           src={event.image}
@@ -140,6 +158,7 @@ const UpcomingEvents = () => {
                           className="w-full h-auto object-contain rounded-lg"
                         />
                       </Link>
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
                     </div>
                     {/* Event Details */}
                     <div className="text-center">

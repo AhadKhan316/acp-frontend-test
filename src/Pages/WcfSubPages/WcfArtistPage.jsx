@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import CardDisplay from "../../components/wcfReusableComponents/WcfLandingPageCardCarousel";
 
+<<<<<<< HEAD
+import artist1 from "/src/assets/wcf-assets/aashir-wajat-artist.jpg"
+
+import artist4 from "/src/assets/wcf-assets/ACMA2-artist.jpg"
+=======
 import artist1 from "/src/assets/wcf-assets/wcf-artists/aashir-wajat-artist.jpg"
 
 import artist4 from "/src/assets/wcf-assets/wcf-artists/ACMA2-artist.jpg"
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
 
 const WcfArtists = () => {
   const artists = [

@@ -54,7 +54,6 @@ function WcfPerformances() {
 
         <div className="flex flex-wrap justify-center gap-3 md:gap-4 px-4">
           {nations.map((nation) => {  
-
             const isWide = WIDE_FLAGS.includes(nation.code);
             const isTall = TALL_FLAGS.includes(nation.code);
             

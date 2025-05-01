@@ -92,12 +92,20 @@ const About = () => {
             </div>
           </motion.div>
           <motion.h4
+<<<<<<< HEAD
+            className="text-2xl sm:text-3xl lg:text-4xl text-black font-semibold mb-4 sm:mb-6"
+=======
             className="text-xl sm:text-3xl lg:text-4xl text-black font-semibold mb-4 sm:mb-6"
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
           >
+<<<<<<< HEAD
+            M. Ahmed Shah (HI, SI)
+=======
             Mohammad Ahmed Shah (HI, SI)
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
           </motion.h4>
           <motion.p
             className="text-black mx-auto leading-relaxed text-base sm:text-lg md:text-xl lg:max-w-3xl"

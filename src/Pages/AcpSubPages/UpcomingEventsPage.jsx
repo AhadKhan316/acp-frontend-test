@@ -7,6 +7,23 @@ const UpcomingEventsPage = () => {
   const [events, setEvents] = useState([
     {
       id: 1,
+<<<<<<< HEAD
+      title: "Sukkur Chapter 2",
+      date: "2025-05-15",
+      location: "Sukkur IBA University, Sukkur, Pakistan",
+      image: posterImg1,
+      infoLink: "/info/sukkur-chapter-2",
+      ticketsLink: "/tickets/sukkur-chapter-2",
+    },
+    {
+      id: 3,
+      title: "Admission Open 2025-26",
+      date: "2025-07-20",
+      location: "School of Visual & Performing Arts, Karachi, Pakistan",
+      image: posterImg3,
+      infoLink: "/info/admission-2025",
+      ticketsLink: "/tickets/admission-2025",
+=======
       title: "Arts Alumni Festival",
       date: "2025-05-09",
       description: "Join us for the second chapter of our cultural event in Sukkur.",
@@ -22,6 +39,7 @@ const UpcomingEventsPage = () => {
       image: posterImg3,
       infoLink: "",
       ticketsLink: "", // No ticket link for this event
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
     },
   ]);
 
@@ -94,6 +112,24 @@ const UpcomingEventsPage = () => {
                 </div>
 
                 <div className="flex flex-col">
+<<<<<<< HEAD
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2">
+                    {event.title.toUpperCase()}
+                  </h3>
+                  <div className="flex items-center text-sm sm:text-base mb-4">
+                    <span className="mr-2">📅</span>
+                    <span>
+                      {new Date(event.date).toLocaleDateString("en-US", {
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
+                    </span>
+                    <span className="mx-2">•</span>
+                    <span className="mr-2">📍</span>
+                    <span>{event.location}</span>
+                  </div>
+=======
                   <h3 className="text-lg sm:text-xl font-bold text-black mb-2">
                     {event.title.toUpperCase()}
                   </h3>
@@ -104,6 +140,7 @@ const UpcomingEventsPage = () => {
                       year: "numeric",
                     })}
                   </p>
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
 
                   <div className="flex space-x-4">
                     <a
@@ -112,6 +149,14 @@ const UpcomingEventsPage = () => {
                     >
                       INFO
                     </a>
+<<<<<<< HEAD
+                    <a
+                      href={event.ticketsLink}
+                      className="px-8 py-2 bg-red-700 border border-white text-white font-semibold text-sm rounded-full hover:bg-red-700 hover:text-white transition duration-300"
+                    >
+                      TICKETS
+                    </a>
+=======
                     {event.ticketsLink && (
                       <a
                         href={event.ticketsLink}
@@ -120,6 +165,7 @@ const UpcomingEventsPage = () => {
                         TICKETS
                       </a>
                     )}
+>>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
                   </div>
                 </div>
               </motion.div>
