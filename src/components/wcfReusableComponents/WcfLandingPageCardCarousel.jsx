@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -47,7 +47,7 @@ const CardCarousel = ({
         />
         <div className="absolute inset-0"></div>
         {/* Card Content Overlay */}
-        <div className="absolute bottom-0 left-0 p-6 text-white bg-gradient-to-t from-black/100 to-transparent">
+        <div className="absolute bottom-0 left-0 p-6 text-white ">
           <h3 className="text-3xl font-bold mb-2 tracking-wide">{card.title}</h3>
           <p className="text-lg mb-4 leading-relaxed">{card.description}</p>
           {card.link && (
@@ -62,7 +62,7 @@ const CardCarousel = ({
       </div>
 
       {/* Decorative Accent */}
-      <div className="absolute top-2 right-2 w-6 h-6 bg-gradient-to-br from-red-800 to-red-500 rounded-full"></div>
+      {/* <div className="absolute top-2 right-2 w-6 h-6 bg-gradient-to-br from-red-800 to-red-500 rounded-full"></div> */}
     </div>
   );
 

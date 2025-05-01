@@ -100,7 +100,7 @@ const StepCarousel = ({
                 {/* Step Indicator */}
                 <div className="flex items-center justify-center mb-4">
                   <span
-                    className={`w-10 h-10 bg-gradient-to-r from-red-700 to-red-500 text-white rounded-full flex items-center justify-center text-lg font-semibold ${stepIndicatorClassName}`}
+                  //</div> className={`w-10 h-10 bg-gradient-to-r from-red-700 to-red-500 text-white rounded-full flex items-center justify-center text-lg font-semibold ${stepIndicatorClassName}`}
                   >
                     {step.id}
                   </span>
