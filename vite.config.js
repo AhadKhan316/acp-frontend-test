@@ -1,22 +1,16 @@
-<<<<<<< HEAD
-=======
 // vite.config.js
->>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { VitePWA } from "vite-plugin-pwa";
-<<<<<<< HEAD
+
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import { imagetools } from "vite-imagetools";
-=======
->>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
 
 export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-<<<<<<< HEAD
     imagetools(), // For advanced image transformations
     ViteImageOptimizer({
       // Basic configuration - adjust based on your needs
@@ -40,14 +34,11 @@ export default defineConfig({
       cache: true, // Enable caching for faster rebuilds
       includePublic: true, // Process images in public folder
     }),
-=======
->>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
     VitePWA({
       registerType: "autoUpdate",
       injectRegister: "auto",
       workbox: {
         cleanupOutdatedCaches: true,
-<<<<<<< HEAD
         globPatterns: ["**/*.{js,css,html,ico,png,svg,json,webp,avif}"], // Added webp and avif
         runtimeCaching: [
           {
@@ -111,14 +102,11 @@ export default defineConfig({
             type: "image/webp",
           },
         ],
-=======
->>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
       },
     }),
   ],
   build: {
     assetsInlineLimit: 4096,
-<<<<<<< HEAD
     // Enable brotli and gzip compression
     reportCompressedSize: true,
     minify: "terser",
@@ -133,7 +121,5 @@ export default defineConfig({
     include: ["react", "react-dom"],
   },
 });
-=======
   },
 });
->>>>>>> fbfb84323d75946017973a822635bbc57c7f31ad
