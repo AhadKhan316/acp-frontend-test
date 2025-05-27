@@ -19,9 +19,8 @@ import ContactUs from './Pages/ContactUs';
 
 // Pages
 import AcademiesPage from './Pages/AcademyPage';
-import VenuesPage from './Pages/VenuePage';
 import SovapaPage from './Pages/SovapaPage';
-import VenuesPage from './Pages/Venue';
+import FacilitiesPage from './Pages/Venue';
 import AboutUs from './Pages/AboutUs';
 import GoverningBody from './Pages/GoverningBody';
 import TeamMembers from './Pages/TeamMember';
@@ -34,7 +33,6 @@ import UpcomingEventsPage from './Pages/AcpSubPages/UpcomingEventsPage';
 import AcademyCoursePage from './Pages/AcpSubPages/AcademyCoursePage';
 import VenueSubPage from './Pages/AcpSubPages/VenuesPage';
 import SovapaCoursePage from './Pages/AcpSubPages/SovapaCoursePage';
-import VenueSubPage from './Pages/AcpSubPages/VenuesPage';
 
 // WCF Page
 import WorldCultureFestival from './Pages/WorldCulturalFestival';
@@ -100,7 +98,7 @@ const App = () => {
           {/* Contact Us */}
 
           <Route path="/sovapa" element={<SovapaPage />} />
-          <Route path="/facilities" element={<VenuesPage />} />
+          <Route path="/facilities" element={<FacilitiesPage />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/governingBody" element={<GoverningBody />} />
           <Route path="/teamMembers" element={<TeamMembers />} />
