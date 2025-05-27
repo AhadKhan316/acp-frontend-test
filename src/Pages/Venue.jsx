@@ -24,7 +24,7 @@ import venueImg13 from "../assets/venues/gulrang.png";
 import venueImg14 from "../assets/venues/audio-studio.png";
 import venueImg15 from "../assets/venues/parking.png";
 
-const VenuesPage = () => {
+const FacilitiesPage = () => {
   const venueData = [
     { id: 1, name: "Auditorium 1", slug: "audi1", image: venueImg1 },
     { id: 2, name: "Auditorium 2", slug: "audi2", image: venueImg2 },
@@ -158,4 +158,4 @@ const VenuesPage = () => {
   );
 };
 
-export default VenuesPage;
+export default FacilitiesPage;
